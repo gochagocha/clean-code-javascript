@@ -1036,7 +1036,7 @@ inventoryTracker("apples", req, "www.inventory-awesome.io");
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Objects and Data Structures**
+## **ობიექტები და მონაცემთა სტრუქტურები**
 
 ### Use getters and setters
 
@@ -1829,7 +1829,7 @@ inventoryTracker.requestItems();
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Testing**
+## **ტესტირება**
 
 Testing is more important than shipping. If you have no tests or an
 inadequate amount, then every time you ship code you won't be sure that you
@@ -1900,7 +1900,7 @@ describe("MomentJS", () => {
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Concurrency**
+## **ასინქრონულობა**
 
 ### Use Promises, not callbacks
 
@@ -2079,7 +2079,7 @@ getdata()
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Formatting**
+## **ფორმატირება**
 
 Formatting is subjective. Like many rules herein, there is no hard and fast
 rule that you must follow. The main point is DO NOT ARGUE over formatting.
@@ -2218,7 +2218,7 @@ review.perfReview();
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Comments**
+## **კომენტარები**
 
 ### Only comment things that have business logic complexity.
 
@@ -2354,7 +2354,7 @@ const actions = function() {
 
 **[⬆ back to top](#table-of-contents)**
 
-## Translation
+## **თარგმანები**
 
 This is also available in other languages:
 
