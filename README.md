@@ -4,7 +4,7 @@
 
 1. [შესავალი](#შესავალი)
 2. [ცვლადები](#ცვლადები)
-3. [ფუნქციები](#functions)
+3. [ფუნქციები](#ფუნქციები)
 4. [ობიექტები და მონაცემთა სტრუქტურები](#ობიექტები-და-მონაცემთა-სტრუქტურები)
 5. [კლასები](#კლასები)
 6. [SOLID](#solid)
@@ -20,32 +20,20 @@
 ![Humorous image of software quality estimation as a count of how many expletives
 you shout when reading code](https://www.osnews.com/images/comics/wtfm.jpg)
 
-Software engineering principles, from Robert C. Martin's book
-[_Clean Code_](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
-adapted for JavaScript. This is not a style guide. It's a guide to producing
-[readable, reusable, and refactorable](https://github.com/ryanmcdermott/3rs-of-software-architecture) software in JavaScript.
+სტატიაში აღწერილია პროგრამის სწორად წერის პრინციპები, რომელიც წარმოადგენს რობერტ ს. მარტინის წიგნის [_Clean Code_](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
+ადაპტირებულ ვარიანტს JavaScript-ისთვის. სახელმძღვანელოში აღწერილია პრინციპები, თუ როგორ უნდა დაიწეროს კოდი JavaScript-ში, რათა ის იყოს [წაკითხვადი (readable), ხელახლა გამოყენებადი (reusable) და რეფაქტორირებადი (refactorable).](https://github.com/ryanmcdermott/3rs-of-software-architecture)
 
-Not every principle herein has to be strictly followed, and even fewer will be
-universally agreed upon. These are guidelines and nothing more, but they are
-ones codified over many years of collective experience by the authors of
-_Clean Code_.
+რა თქმა უნდა სახელმძღვანელოში წარმოდგენილ ყველა პრინციპს მკაცრად ვერ დაიცავთ, თუმცა გაითვალისწინეთ, ეს გაიდლაინები შემუშავებულია _Clean Code_-ის ავტორთა მრავალწლიანი კოლექტიური გამოცდილების გათვალისწინებით.
 
-Our craft of software engineering is just a bit over 50 years old, and we are
-still learning a lot. When software architecture is as old as architecture
-itself, maybe then we will have harder rules to follow. For now, let these
-guidelines serve as a touchstone by which to assess the quality of the
-JavaScript code that you and your team produce.
+რა თქმა უნდა სახელმძღვანელოში წარმოდგენილ ყველა პრინციპს მკაცრად ვერ დაიცავთ, თუმცა გაითვალისწინეთ, ეს გაიდლაინები შემუშავებულია Clean Code-ის ავტორთა მრავალწლიანი კოლექტიური გამოცდილების გათვალისწინებით.
 
-One more thing: knowing these won't immediately make you a better software
-developer, and working with them for many years doesn't mean you won't make
-mistakes. Every piece of code starts as a first draft, like wet clay getting
-shaped into its final form. Finally, we chisel away the imperfections when
-we review it with our peers. Don't beat yourself up for first drafts that need
-improvement. Beat up the code instead!
+პროგრამული უზრუნველყოფის შემუშავებას სულ რაღც 50 წლიანი ისტორია აქვს. ამ თვალსაზრისით ჩვენ ჯერ კიდევ ბევრი გვაქვს სასწავლი. ასე, რომ პროგრამული უზრუნველყოფის არქიტექტურასთან დაკავშირებული წესები ჯერ კიდევ ჩამოყალიბების სტადიაზეა.   
+და კიდევ ერთი რამ: ამ გაიდლაინის წაკითხვით ეგრევე არ გახდებით საუკეთესო პროგრამისი. არ გეგონოთ, რომ კოდის წერისას  შეცდომებს არ დაუშვებთ. :) 
+
 
 ## **ცვლადები**
 
-### Use meaningful and pronounceable variable names
+### გამოიყენეთ გააზრებული და სიტყვიერად კარგად გამოთქმადი ცვლადის სახელები
 
 **Bad:**
 
@@ -61,7 +49,7 @@ const currentDate = moment().format("YYYY/MM/DD");
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use the same vocabulary for the same type of variable
+### გამოიყენეთ იგივე ტერმინები ერთი და იგივე ტიპის ცვლადისთვის
 
 **Bad:**
 
@@ -79,15 +67,12 @@ getUser();
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use searchable names
+### გამოიყენეთ ძებნადი სახელები
 
-We will read more code than we will ever write. It's important that the code we
-do write is readable and searchable. By _not_ naming variables that end up
-being meaningful for understanding our program, we hurt our readers.
-Make your names searchable. Tools like
-[buddy.js](https://github.com/danielstjules/buddy.js) and
+პროგრამისტებს იმაზე მეტი კოდის გარჩევა და წაკითხვა უწევთ, ვიდრე ცხოვრებაში დაწერენ. მნიშვნელოვანია, რომ კოდი, რომელსაც ჩვენ ვწერთ, იკითხებოდეს და ცვლადები ადვილად იძებნებოდეს. ცვლადებზე სახელების არ მინიჭებით პრობლემებს ვუქმნით ჩვენი კოდის  მკითხველს. შეეცადეთ ცვლადის სახელები ძებნადი იყოს. ინსტრუმენტები, როგორიცაა 
+[buddy.js](https://github.com/danielstjules/buddy.js) და
 [ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md)
-can help identify unnamed constants.
+დაგეხმარებათ უსახელო მუდმივების იდენტიფიცირებაში.
 
 **Bad:**
 
@@ -107,7 +92,7 @@ setTimeout(blastOff, MILLISECONDS_PER_DAY);
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use explanatory variables
+### გამოიყენეთ განმარტებითი ცვლადები
 
 **Bad:**
 
@@ -131,9 +116,9 @@ saveCityZipCode(city, zipCode);
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid Mental Mapping
+### მოერიდეთ ნაგულისხმევ ცვლადებს
 
-Explicit is better than implicit.
+ცვლადის ცხადად დასახელება სჯობს ნაგულისხმევ ცვლადს.
 
 **Bad:**
 
@@ -166,10 +151,9 @@ locations.forEach(location => {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Don't add unneeded context
+### არ დაამატოთ არასაჭირო კონტექსტი
 
-If your class/object name tells you something, don't repeat that in your
-variable name.
+თუ თქვენი კლასის/ობიექტის სახელი რაღაცას გეუბნებათ, ნუ გაიმეორებთ იგივე დასახელებას  თქვენი ცვლადის სახელშიც.
 
 **Bad:**
 
@@ -201,12 +185,9 @@ function paintCar(car, color) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use default arguments instead of short circuiting or conditionals
+### გამოიყენეთ დეფაულტ არგუმენტები გამოთვლის მოკლე სქემის ნაცვლად (short circuiting)
 
-Default arguments are often cleaner than short circuiting. Be aware that if you
-use them, your function will only provide default values for `undefined`
-arguments. Other "falsy" values such as `''`, `""`, `false`, `null`, `0`, and
-`NaN`, will not be replaced by a default value.
+დეფაულტ არგუმენტები ხშირად უფრო გასაგებია, ვიდრე short circuiting . გაითვალისწინეთ, რომ თუ მათ იყენებთ, თქვენი ფუნქცია უზრუნველყოფს მხოლოდ დეფაულტ მნიშვნელობებს undefined არგუმენტებისთვის. სხვა "falsy" მნიშვნელობები, როგორიცაა ' ', " ", false, null, 0 და NaN, არ შეიცვლება დეფაულტ მნიშვნელობით.
 
 **Bad:**
 
@@ -227,37 +208,24 @@ function createMicrobrewery(name = "Hipster Brew Co.") {
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Functions**
+## **ფუნქციები**
 
-### Function arguments (2 or fewer ideally)
+### ფუნქციის არგუმენტები (იდეალურია 2 ან ნაკლები არგუმენტი)
 
-Limiting the amount of function parameters is incredibly important because it
-makes testing your function easier. Having more than three leads to a
-combinatorial explosion where you have to test tons of different cases with
-each separate argument.
+ფუნქციის პარამეტრების შეზღუდული რაოდენობა უაღრესად მნიშვნელოვანია, რადგან ეს აადვილებს თქვენი ფუნქციის ტესტირებას. სამზე მეტი არგუმენტის არსებობა იწვევს კომბინატორულ აფეთქებას, სადაც თითოეული ცალკეული  არგუმენტისათვის მოგიწევთ უამრავი სხვადასხვა ვარიანტის გატესტვა.
 
-One or two arguments is the ideal case, and three should be avoided if possible.
-Anything more than that should be consolidated. Usually, if you have
-more than two arguments then your function is trying to do too much. In cases
-where it's not, most of the time a higher-level object will suffice as an
-argument.
+ერთი ან ორი არგუმენტი იდეალური შემთხვევაა. სამ არგუმენტს მაქსიმალურად ერიდეთ, თუ ეს შესაძლებელია. თუ ბევრი არგუმენტი გაქვთ, ისინი უნდა გააერთიანოთ. როგორც წესი, თუ თქვენ გაქვთ ორზე მეტი არგუმენტი, მაშინ თქვენი ფუნქცია ძალიან ბევრის გაკეთებას ცდილობს. უმეტეს შემთხვევაში, სადაც ეს შესაძლებელია, არგუმენტის სახით საკმარისი იქნება ზედა დონის ობიექტის გამოყენება.
 
-Since JavaScript allows you to make objects on the fly, without a lot of class
-boilerplate, you can use an object if you are finding yourself needing a
-lot of arguments.
+რადგანაც JavaScript გაძლევთ ობიექტების „ნახადუ“ შექმნის საშუალებას, რაიმე არსებული კლასის გამოყენების გარეშე, შეგიძლიათ გამოიყენოთ ობიექტი, როცა აშკარად ბევრი არგუმენტი გჭირდებათ.
 
-To make it obvious what properties the function expects, you can use the ES2015/ES6
-destructuring syntax. This has a few advantages:
+იმისათვის, რომ ცხადად ჩანდეს თუ რა თვისებების მიღებას ელის ფუნქცია , შეგიძლიათ გამოიყენოთ ES2015/ES6 დესტრუქციული სინტაქსი. ამას აქვს რამდენიმე უპირატესობა:
 
-1. When someone looks at the function signature, it's immediately clear what
-   properties are being used.
-2. It can be used to simulate named parameters.
-3. Destructuring also clones the specified primitive values of the argument
-   object passed into the function. This can help prevent side effects. Note:
-   objects and arrays that are destructured from the argument object are NOT
-   cloned.
-4. Linters can warn you about unused properties, which would be impossible
-   without destructuring.
+
+1. როდესაც უყურებთ ფუნქციის სიგნატურას, მაშინვე ნათელია, თუ რა თვისებები გამოიყენება.
+2. ის შეიძლება გამოყენებულ იქნას დასახელებული პარამეტრების სიმულაციისთვის.
+3. Destructuring-ი კლონირებას უკეთებს ფუნქციისათვის გადაცემულ არგუმენტ-ობიექტის პრიმიტიულ მნიშვნელობებს. ასევე ახდენს ფუნქციაში არგუმენტად გადაცემული ობიექტის მითითებულ პრიმიტიულ მნიშვნელობებს. ეს დაგეხმარებათ თავიდან აიცილოთ გვერდითი მოვლენები. შენიშვნა: ობიექტები და მასივები, რომლებიც დესტრუქტურირებულია არგუმენტ-ობიექტიდან, არ არის კლონირებული.
+4. ლინტერებს შეუძლიათ გაგაფრთხილონ გამოუყენებელი თვისებების შესახებ, რაც შეუძლებელი იქნება დესტრუქტურირების გარეშე.
+
 
 **Bad:**
 
