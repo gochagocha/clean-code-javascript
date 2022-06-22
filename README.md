@@ -2,20 +2,20 @@
 
 ## Table of Contents
 
-1. [შესავალი](#introduction)
-2. [Variables](#variables)
-3. [Functions](#functions)
-4. [Objects and Data Structures](#objects-and-data-structures)
-5. [Classes](#classes)
+1. [შესავალი](#შესავალი)
+2. [ცვლადები](#ცვლადები)
+3. [ფუნქციები](#functions)
+4. [ობიექტები და მონაცემთა სტრუქტურები](#ობიექტები_დ_მონაცემთა_სტრუქტურები)
+5. [კლასები](#კლასები)
 6. [SOLID](#solid)
-7. [Testing](#testing)
-8. [Concurrency](#concurrency)
+7. [ტესტირება](#ტესტირება)
+8. [ასინქრონულობა](#ასინქრონულობა)
 9. [Error Handling](#error-handling)
-10. [Formatting](#formatting)
-11. [Comments](#comments)
-12. [Translation](#translation)
+10. [ფორმატირება](#ფორმატირება)
+11. [კომენტარები](#კომენტარები)
+12. [თარგმანები](#თარგმანები)
 
-## Introduction
+## შესავალი
 
 ![Humorous image of software quality estimation as a count of how many expletives
 you shout when reading code](https://www.osnews.com/images/comics/wtfm.jpg)
@@ -43,7 +43,7 @@ shaped into its final form. Finally, we chisel away the imperfections when
 we review it with our peers. Don't beat yourself up for first drafts that need
 improvement. Beat up the code instead!
 
-## **Variables**
+## **ცვლადები**
 
 ### Use meaningful and pronounceable variable names
 
@@ -1139,7 +1139,7 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Classes**
+## **კლასები**
 
 ### Prefer ES2015/ES6 classes over ES5 plain functions
 
