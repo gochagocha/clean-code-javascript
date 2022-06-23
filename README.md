@@ -31,7 +31,7 @@ you shout when reading code](https://www.osnews.com/images/comics/wtfm.jpg)
 
 ## **ცვლადები**
 
-### გამოიყენეთ გააზრებული და სიტყვიერად კარგად გამოთქმადი ცვლადის სახელები
+### გამოიყენეთ გააზრებული და სიტყვიერად გამოთქმადი ცვლადის სახელები
 
 **Bad:**
 
@@ -386,15 +386,11 @@ function parse(tokens) {
 
 ### წაშალეთ დუბლირებული კოდი
 
-Do your absolute best to avoid duplicate code. Duplicate code is bad because it
-means that there's more than one place to alter something if you need to change
-some logic.
-
 მაქსიმალურად შეეცადეთ თავიდან აიცილოთ კოდის დუბლირება. დუბლირებული კოდი იმითაა ცუდი, რომ, თუ მასში ლოგიკის გასწორება დაგჭირდათ, მაშინ ამის გაკეთება ბევრგან მოგიწევთ. 
 
 ხშირად იმიტომ გიწევთ კოდის დუბლირება, რომ კოდში გაქვთ ლოგიკურად ერთმანეთის მსგავსი ადგილები. თუმცა მათ შორის არსებობს განსხვავებები, რაც გაიძულებთ დაწეროთ რამოდენიმე ფუნქცია, რომლებიც ბევრ მსგავს ოპერაციას ასრულებს. კოდის დუბლირების თავიდან აცილება  შესაძლებელია ისეთი აბსტრაქციით, რომელიც დუბლირებულ კოდში არსბულ განსხვავბულ ლოგიკას დაამუშავებს მხოლოდ ერთი ფუნქციით / მოდულით / კლასით.
 
-აბსტრაქციის შექმნას გადამწყვეტი მნიშვნელობა აქვს, ამიტომ თქვენ უნდა გაითვალისწინოთ კლასების პროექტირების პრინციპები (SOLID პრინციპები), რომელიც ქვემოთაა მოცემული. ცუდად შედგენილი აბსტრაქციები შეიძლება უარესი იყოს ვიდრე კოდის დუბლირება, ასე რომ ყურადღებით იყავით აბსტრაქციებთან. სხვა სიტყვებით რომ ვთქვათ, თუ შეგიძლიათ კარგი აბსტრაქციის შედგენა, შეადგინეთ! თუ არადა შეეგუეთ იმ აზრს, რომ ერთი პატარა ლოგიკის შეცვლის გამო მოგიწევთ ბევრ ადგილას კოდის შეცვლა 
+აბსტრაქციის შექმნას გადამწყვეტი მნიშვნელობა აქვს, ამიტომ თქვენ უნდა გაითვალისწინოთ კლასების პროექტირების პრინციპები (SOLID პრინციპები), რომელიც ქვემოთაა მოცემული. ცუდად შედგენილი აბსტრაქციები შეიძლება უარესი იყოს ვიდრე კოდის დუბლირება, ასე რომ ყურადღებით იყავით აბსტრაქციებთან. სხვა სიტყვებით რომ ვთქვათ, თუ შეგიძლიათ კარგი აბსტრაქციის შედგენა, შეადგინეთ! თუ არადა შეეგუეთ იმ აზრს, რომ ერთი პატარა ლოგიკის შეცვლის გამო მოგიწევთ ბევრ ადგილას კოდის შეცვლა. :)
 
 **Bad:**
 
@@ -459,7 +455,7 @@ function showEmployeeList(employees) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Set default objects with Object.assign
+### ობიექტის ველების დეფაულტ მნიშვნელობები დააყენეთ Object.assign-ით
 
 **Bad:**
 
@@ -512,9 +508,9 @@ createMenu(menuConfig);
 
 **[⬆ back to top](#table-of-contents)**
 
-### Don't use flags as function parameters
+### არ გამოიყენოთ დროშები ფუნქციის პარამეტრებად
 
-Flags tell your user that this function does more than one thing. Functions should do one thing. Split out your functions if they are following different code paths based on a boolean.
+დროშების გამოყენება იმას მიუთითებს, რომ ეს ფუნქცია ერთზე მეტ რამეს აკეთებს. თუ ლოგიკური პარამეტრის შესაბამისად ის სხვადასხვა კოდს ასრულებს, მაშინ გაყავით თქვენი ფუნქცია.
 
 **Bad:**
 
@@ -542,22 +538,14 @@ function createTempFile(name) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid Side Effects (part 1)
+### ერიდეთ გვერდით მოვლენებს (ნაწილი 1)
 
-A function produces a side effect if it does anything other than take a value in
-and return another value or values. A side effect could be writing to a file,
-modifying some global variable, or accidentally wiring all your money to a
-stranger.
+ფუნქცია უნდა იღებდეს პარამეტრების  გარკვეულ მნიშვნელობებს და აბრუნებს სხვა მნიშვნელობებს.  ამის გარდა ის თუ სხვა რამესაც აკეთებს, ესეიგი ფუნქციას აქვს გვერდითი მოვლენები. მაგალითად, გვერდითი მოვლენა შეიძლება იყოს ფაილში ინფორმაციის ჩაწერა, ზოგიერთი გლობალური ცვლადის შეცვლა, ან მთელი ფულის გადატანა უცხო ადამიანის ანგარიშზე.
 
-Now, you do need to have side effects in a program on occasion. Like the previous
-example, you might need to write to a file. What you want to do is to
-centralize where you are doing this. Don't have several functions and classes
-that write to a particular file. Have one service that does it. One and only one.
+თუმცა ზოგიერთ შემთხვევაში გვერდით მოვლენებს ვერ აცდებით და დაგჭირდებათ მათი გამოყენება. წინა შემთხვევის მსგავსად თქვენ შეიძლება დაგჭირდეთ გარკვეული ინფორმაციის ჩაწერა ფაილში. არ შექმნათ რამოდენიმე ფუნქცია ან კლასი კონკრეტულ ფაილში ინფორმაციის ჩასაწერად. ამ საქმისთვის უნდა არსებობდეს ერთი სერვისი. მხოლოდ ერთი!
 
-The main point is to avoid common pitfalls like sharing state between objects
-without any structure, using mutable data types that can be written to by anything,
-and not centralizing where your side effects occur. If you can do this, you will
-be happier than the vast majority of other programmers.
+მთავარია, თავიდან ავიცილოთ ისეთი გავრცელებული შეცდომები, როგორებიცაა: ობიექტებს შორის ყოველგვარი სტრუქტურის გარეშე  გაზიარებული state-ები, ასევე ცვალებადი ტიპების მონაცემთა გამოყენება, რომლებსაც შეიძლება ნებისმიერი მნიშვნელობა მიენიჭოს. თუ ამის თავიდან აცილებას შეძლებთ, თქვენ უფრო ბედნიერი იქნებით, ვიდრე პროგრამისტების დიდი უმრავლესობა.
+
 
 **Bad:**
 
@@ -591,43 +579,22 @@ console.log(newName); // ['Ryan', 'McDermott'];
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid Side Effects (part 2)
+### აიცილეთ გვერდითი მოვლენები (ნაწილი 2)
 
-In JavaScript, some values are unchangeable (immutable) and some are changeable 
-(mutable). Objects and arrays are two kinds of mutable values so it's important 
-to handle them carefully when they're passed as parameters to a function. A 
-JavaScript function can change an object's properties or alter the contents of 
-an array which could easily cause bugs elsewhere.
+JavaScript-ში ზოგიერთი მნიშვნელობები (values) უცვლელია, ზოგიერთი კი ცვალებადია. ობიექტები და მასივები შედგებიან ცვალებადი მნიშვნელობებისგან, ამიტომ როდესაც ისინი პარამეტრებად გადაეცემიან ფუნქციას, სიფრთხილე უნდა გამოვიჩინოთ. JavaScript ფუნქციას შეუძლია შეცვალოს ობიექტის თვისებები ან შეცვალოს მასივის შემცველობა, რამაც შეიძლება სხვაგან გამოიწვიოს შეცდომები.
 
-Suppose there's a function that accepts an array parameter representing a 
-shopping cart. If the function makes a change in that shopping cart array - 
-by adding an item to purchase, for example - then any other function that 
-uses that same `cart` array will be affected by this addition. That may be 
-great, however it could also be bad. Let's imagine a bad situation:
+დავუშვათ, არებობს ფუნქცია, რომელიც პარამეტრად იღებს მასივს და ის წარმოადგენს კალათაში (cart) ჩაგდებული შესაძენი ნივთების სიას. თუ ფუნქცია შეცვლის ამ მასივს - მაგალითად, დაამატებს ახალ შესაძენ  ნივთს - მაშინ ნებისმიერი სხვა ფუნქცია, რომელიც იყენებს იმავე კალათის მასივს, დამოკიდებული იქნება ამ დამატებულ ნივთზე. ეს შეიძლება კარგიც იყოს და ცუდიც. წარმოვიდგინოთ ცუდი სიტუაცია:
 
-The user clicks the "Purchase" button which calls a `purchase` function that
-spawns a network request and sends the `cart` array to the server. Because
-of a bad network connection, the `purchase` function has to keep retrying the
-request. Now, what if in the meantime the user accidentally clicks an "Add to Cart"
-button on an item they don't actually want before the network request begins?
-If that happens and the network request begins, then that purchase function
-will send the accidentally added item because the `cart` array was modified.
+მომხმარებელი აწკაპუნებს ღილაკზე „შესყიდვა“, რომელიც იძახებს purchase (შესყიდვის) ფუნქციას, ის აყალიბებს მოთხოვნას (request) და კალათის მასივს აგზავნის  სერვერზე. წარმოვიდგინოთ, რომ ქსელის ცუდი კავშირის გამო, purchase ფუნქცი იძულებულია ხელახლა გააგზავნოს მოთხოვნა სერვერზე. რა მოხდება, თუ ამ მომენტში მომხმარებელი შეცდომით დააწკაპუნებს ღილაკზე "კალათაში დამატება" იმ ნივთზე, რომლის დამატება კალათაში არ სურს? თუ ასე მოხდება და ამავე დროს სერვერზე რექვესტი წარმატებით გაიგზავნა, მაშინ ეს შესყიდვის ფუნქცია სერვერზე გაგზავნის შემთხვევით დამატებულ ნივთს, რადგანაც კალათის მასივი addItemToCart ფუნქციის მიერ შეიცვალა.
 
-A great solution would be for the `addItemToCart` function to always clone the 
-`cart`, edit it, and return the clone. This would ensure that functions that are still
-using the old shopping cart wouldn't be affected by the changes.
+კარგი გამოსავალი იქნებოდა addItemToCart ფუნქციას ყოველთვის რომ დაეკლონა cart –ის მასივი, შემდეგ დაერედაქტირებინა და ეს დარედაქტირებული კლონი დაებრუნებინა. ამით სხვა ფუნქციებს, რომლებიც იყენებენ კალათის მასივს, არ შეეხებოდათ არავითარი ცვლილებები.
 
-Two caveats to mention to this approach:
+ორი გაფრთხილება ამ მიდგომასთან დაკავშირებით:
 
-1. There might be cases where you actually want to modify the input object,
-   but when you adopt this programming practice you will find that those cases
-   are pretty rare. Most things can be refactored to have no side effects!
+1.	შეიძლება რეალურად გსურთ გადასაცემი ობიექტის შეცვლა, მაგრამ როდესაც თქვენ მიეჩვევით სუფთა კოდის წერას აღმოაჩენთ, რომ ეს შემთხვევები საკმაოდ იშვიათია. კოდის ლოგიკა შეიძლება ისე გადაკეთდეს, რომ არ ჰქონდეს გვერდითი მოვლენები!
 
-2. Cloning big objects can be very expensive in terms of performance. Luckily,
-   this isn't a big issue in practice because there are
-   [great libraries](https://facebook.github.io/immutable-js/) that allow
-   this kind of programming approach to be fast and not as memory intensive as
-   it would be for you to manually clone objects and arrays.
+3.	დიდი ობიექტების კლონირება შეიძლება ძალიან რთული აღმოჩნდეს შესრულების თვალსაზრისით. საბედნიეროდ არსებობს 
+   [მშვენიერი  ბიბლიოთეკები ](https://facebook.github.io/immutable-js/) რომლებიც საშუალებას გვაძლევს სწრაფად განხორციელდეს ეს მიდგომა, თან მეხსიერებაც ნაკლებად დაიხარჯოს, როგორც ეს იქნებოდა ობიექტებისა და მასივების ხელით კლონირების შემთხვევაში.
 
 **Bad:**
 
@@ -647,17 +614,9 @@ const addItemToCart = (cart, item) => {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Don't write to global functions
+### არაფერი ჩაწეროთ გლობალურ ობიექტებში
 
-Polluting globals is a bad practice in JavaScript because you could clash with another
-library and the user of your API would be none-the-wiser until they get an
-exception in production. Let's think about an example: what if you wanted to
-extend JavaScript's native Array method to have a `diff` method that could
-show the difference between two arrays? You could write your new function
-to the `Array.prototype`, but it could clash with another library that tried
-to do the same thing. What if that other library was just using `diff` to find
-the difference between the first and last elements of an array? This is why it
-would be much better to just use ES2015/ES6 classes and simply extend the `Array` global.
+გლობალური ობიექტის დაბინძურება JavaScript-ში ცუდი პრაქტიკაა, რადგან შეიძლება მოხდეს სხვა ბიბლიოთეკასთან კონფლიქტი და თქვენი API-ს მომხმარებელი დიდ გაუგებრობაში აღმოჩნდეს exception–ის მიღების შემთხვევაშიც კი. მოდით განვიხილოთ მაგალითი: რა ვქნათ, თუკი გვინდა განვახორციელოთ გლობალური ობიექტი Array–ის extend-ი, ისე რომ მას ჰქონდეს diff  მეთოდი, რომელიც აჩვენებდა განსხვავებას ორ მასივს შორის? Array.prototype-სთვის, თქვენ შეგიძლიათ დაწეროთ ახალი მეთოდი, მაგრამ ის შეიძლება კონფლიკტში მოვიდეს სხვა ბიბლიოთეკასთან, რომელიც ცდილობდა იგივეს გაკეთებას. ხომ არ აჯობებდა, რომ ამ სხვა ბიბლიოთეკის diff  მეთოდს ეჩვენებინა არა მასივებს შორის განსხვავება, არამედ მასივების პირველ და ბოლო ელემენტებს შორის განსხვავება? აი რატომაა ბევრად უკეთესი გამოვიყენოთ ES2015/ES6 კლასები და უბრალოდ გავაფართოვოთ (extend) გლობალური ობიექტი array. 
 
 **Bad:**
 
@@ -681,11 +640,9 @@ class SuperArray extends Array {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Favor functional programming over imperative programming
+### უპირატესობა მიანიჭეთ ფუნქციონალურ პროგრამირებას იმპერატიულ პროგრამირებასთან შედარებით
 
-JavaScript isn't a functional language in the way that Haskell is, but it has
-a functional flavor to it. Functional languages can be cleaner and easier to test.
-Favor this style of programming when you can.
+JavaScript არ არის Haskell–ისნაერი ფუნქციონალური ენა, მაგრამ ის მშვენივრად მეგობრობს ფუნქციონალურობასთანაც. ფუნქციონალურ ენებზე უფრო სუფთა კოდი იწერება და თან ადვილად იტესტება. გამოიყენეთ პროგრამირების ეს სტილის, როცა კი ეს შესაძლებელია.
 
 **Bad:**
 
@@ -746,7 +703,7 @@ const totalOutput = programmerOutput.reduce(
 
 **[⬆ back to top](#table-of-contents)**
 
-### Encapsulate conditionals
+### განახორციელეთ პირობების ინკაფსულაცია
 
 **Bad:**
 
@@ -770,7 +727,7 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid negative conditionals
+### მოერიდეთ უარყოფით პირობებს
 
 **Bad:**
 
@@ -798,16 +755,9 @@ if (isDOMNodePresent(node)) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid conditionals
+### მოერიდეთ პირობებს
 
-This seems like an impossible task. Upon first hearing this, most people say,
-"how am I supposed to do anything without an `if` statement?" The answer is that
-you can use polymorphism to achieve the same task in many cases. The second
-question is usually, "well that's great but why would I want to do that?" The
-answer is a previous clean code concept we learned: a function should only do
-one thing. When you have classes and functions that have `if` statements, you
-are telling your user that your function does more than one thing. Remember,
-just do one thing.
+ერთი შეხედვით შეუძლებელია ამ რეკომენდაციის გათვალისწინება. უმეტეს შემთხვევაში პირველი რეაქცია ასეთია: "როგორ უნდა დავწერო კოდი if-ის გარეშე ?". გამოსავალი იმაში მდგომარეობს, რომ ხშირ შემთხვევაში შეგიძლიათ გამოიყენოთ პოლიმორფიზმი if-ის ჩასანაცვლებლად. როგორც წესი, ჩნდება სხვა კითხვაც: "კარგი, მაგრამ რატომ უნდა გავითვალისწინო ეგ რჩევა?". პასუხი Clean Code-ის ერთ-ერთ პრინციპში შეგიძლიათ ამოიკითხოთ: ფუნქციამ მხოლოდ ერთი რამ უნდა გააკეთოს. თუ თქვენ გაქვთ კლასები და ფუნქციები, რომლებშიც if ოპერატორს იყენებთ, თქვენ ამით აღიარებთ, რომ თქვენი ფუნქცია ერთზე მეტ რამეს აკეთებს. დაიმახსოვრე, ფუნქციამ მხოლოდ ერთი რამე უნდა გააკეთოს.
 
 **Bad:**
 
@@ -858,12 +808,9 @@ class Cessna extends Airplane {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid type-checking (part 1)
+### მოერიდეთ ტიპის შემოწმებას (ნაწილი პირველი)
 
-JavaScript is untyped, which means your functions can take any type of argument.
-Sometimes you are bitten by this freedom and it becomes tempting to do
-type-checking in your functions. There are many ways to avoid having to do this.
-The first thing to consider is consistent APIs.
+JavaScript წრმოადგენს არატიპიზირებულ პროგრამირების ენას, ანუ თქვენს ფუნქციებს შეუძლიათ ნებისმიერი ტიპის არგუმენტი მიიღონ. ზოგჯერ ეს თავისუფლება საქმეს გიფუჭებთ და დიდია ტიპების შემოწმების ცდუნება. ამის თავიდან ასაცილებლად მრავალი გზა არსებობს. პირველი არის – თანმიმდევრული API.
 
 **Bad:**
 
@@ -887,17 +834,12 @@ function travelToTexas(vehicle) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid type-checking (part 2)
+### მოერიდეთ ტიპის შემოწმებას (ნაწილი მეორე)
 
-If you are working with basic primitive values like strings and integers,
-and you can't use polymorphism but you still feel the need to type-check,
-you should consider using TypeScript. It is an excellent alternative to normal
-JavaScript, as it provides you with static typing on top of standard JavaScript
-syntax. The problem with manually type-checking normal JavaScript is that
-doing it well requires so much extra verbiage that the faux "type-safety" you get
-doesn't make up for the lost readability. Keep your JavaScript clean, write
-good tests, and have good code reviews. Otherwise, do all of that but with
-TypeScript (which, like I said, is a great alternative!).
+თუ თქვენ მუშაობთ საბაზისო პრიმიტიულ მნიშვნელობებთან, როგორიცაა სტრიქონები, რიცხვები და მასივები და არ შეგიძლიათ გამოიყენოთ პოლიმორფიზმი, მაგრამ მაინც გჭირდებათ ტიპის შემოწმება, ალბათ ვერ აცდებით TypeScript-ის გამოყენებას. ეს არის ნეიტივ JavaScript-ის მშვენიერი ალტერნატივა, რადგან ის გაძლევთ სტატიკური ტიპიზაციის  საშუალებას ნეიტივ JavaScript სინტაქსის გამდიდრების გზით. JavaScript-ში ტიპის ხელით  შემოწმების პრობლემა ის არის, რომ თუ ყველაფერი კარგად გააკეთე, კოდი ზედმეტად დიდი გამოდის და თქვენს მიერ მიღწეული უსაფრთხოება არ აკომპესირებს კოდის გართულებულ  readable-ს.
+
+არ დააჭუჭყიანოთ JavaScript კოდი, დაწერეთ კარგი ტესტები და ხშირად გაუკეთეთ კოდს რევიუ. ან კიდე ყველაფერი აკონტროლეთ TypeScript-ის გამოყენებით (რომელიც, როგორც ვთქვით, ყოველივე ამის შესანიშნავი ალტერნატივაა!).
+
 
 **Bad:**
 
@@ -924,13 +866,9 @@ function combine(val1, val2) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Don't over-optimize
+### ნუ გადაამლაშებთ კოდის ოპტიმიზაციაში
 
-Modern browsers do a lot of optimization under-the-hood at runtime. A lot of
-times, if you are optimizing then you are just wasting your time. [There are good
-resources](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers)
-for seeing where optimization is lacking. Target those in the meantime, until
-they are fixed if they can be.
+თანამედროვე ბრაუზერები საკმაოდ კარგ ოპტიმიზაციას უკეთებენ კოდს. უმეტეს შემთხვევაში, თქვენს მიერ კოდის ოპტიმიზაციისთვის დახარჯული დრო ტყვილად დაკარგული დროა. [არსებობს კარგი რესურსები]( https://github.com/petkaantonov/bluebird/wiki/Optimization-killers ), რომლებიც გიჩვენებენ სადაა არასაკმარისად ოპტიმიზირებული კოდი. მანამდე გამოიყენეთ ისინი, სანამ სიტუაცია არ გამოსწორდება. 
 
 **Bad:**
 
@@ -952,11 +890,9 @@ for (let i = 0; i < list.length; i++) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Remove dead code
+### წაშალეთ მკვდარი კოდი
 
-Dead code is just as bad as duplicate code. There's no reason to keep it in
-your codebase. If it's not being called, get rid of it! It will still be safe
-in your version history if you still need it.
+მკვდარი კოდი ისეთივე ცუდია, როგორც დუბლირებული კოდი. არ არსებობს მიზეზი, რომ ის კოდში შეინახოთ. თუ კოდი არ გამოიყენება, მოიშორეთ! საჭიროების შემთხვევაში, მისი აღდგენა ყოველთვის შეგიძლიათ ვერსიების ისტორიიდან.
 
 **Bad:**
 
@@ -988,19 +924,16 @@ inventoryTracker("apples", req, "www.inventory-awesome.io");
 
 ## **ობიექტები და მონაცემთა სტრუქტურები**
 
-### Use getters and setters
+### გამოიყენეთ გეტერები და სეტერები
 
-Using getters and setters to access data on objects could be better than simply
-looking for a property on an object. "Why?" you might ask. Well, here's an
-unorganized list of reasons why:
+ობიექტის მონაცემებზე წვდომისთვის ბევრად უკეთესია, გეტერების და სეტერებს გამოყენება ვიდრე ობიექტის თვისებებზე პირდაპირი წვდომაა. რატომ? წარმოგიდგენთ მიზეზების ჩამონათვალს:
 
-- When you want to do more beyond getting an object property, you don't have
-  to look up and change every accessor in your codebase.
-- Makes adding validation simple when doing a `set`.
-- Encapsulates the internal representation.
-- Easy to add logging and error handling when getting and setting.
-- You can lazy load your object's properties, let's say getting it from a
-  server.
+- თუ გინდათ იმაზე მეტი გააკეთოთ, ვიდრე უბრალოდ ობიექტის თვისებები მიიღოთ.
+- Set-ის შესრულებისას მარტივადაა შესაძლებელი ვალიდაციის დამატება.
+- ახორციელებს შიდა წარმოდგენის (internal representation) ინკაფსულაციას.
+- Get-ისა და Set-ის შემთხვევაში ადვილია ლოგირება და შეცდომების დამუშავება.
+- თქვენ შეგიძლიათ გამოიყენოთ თქვენი ობიექტის თვისებების lazy load. ვთქვათ, სერვერიდან მათი მიღებისას.
+
 
 **Bad:**
 
@@ -1049,9 +982,9 @@ account.setBalance(100);
 
 **[⬆ back to top](#table-of-contents)**
 
-### Make objects have private members
+### ობიექტებში შექმენით პრაივატ ველები
 
-This can be accomplished through closures (for ES5 and below).
+ამის მიღწევა შესაძლებელია closures გამოყენებით (ES5 სტანდარტიდან).
 
 **Bad:**
 
@@ -1091,12 +1024,9 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 
 ## **კლასები**
 
-### Prefer ES2015/ES6 classes over ES5 plain functions
+### უპირატესობა მიანიჭეთ ES2015/ES6 კლასებს ES5 plain ფუნქციებთან შედარებით
 
-It's very difficult to get readable class inheritance, construction, and method
-definitions for classical ES5 classes. If you need inheritance (and be aware
-that you might not), then prefer ES2015/ES6 classes. However, prefer small functions over
-classes until you find yourself needing larger and more complex objects.
+ძალიან რთულია წაკითხვადი (readable) კლასის მემკვიდრეობის, კონსტრუქციის და მეთოდების განმარტებების მიღება კლასიკური ES5 კლასებისთვის. თუ თქვენ გჭირდებათ მემკვიდრეობა, მაშინ უპირატესობა მიანიჭეთ ES2015/ES6 კლასებს. თუმცა, უპირატესობა მიანიჭეთ მცირე ფუნქციების გამოყენებას კლასებთან შედარებით, სანამ არ აღმოჩნდებით, რომ გჭირდებათ უფრო დიდი და კომპლექსური ობიექტები.
 
 **Bad:**
 
@@ -1176,13 +1106,9 @@ class Human extends Mammal {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use method chaining
+### გამოიყენეთ chaining პატერნის მეთოდი
 
-This pattern is very useful in JavaScript and you see it in many libraries such
-as jQuery and Lodash. It allows your code to be expressive, and less verbose.
-For that reason, I say, use method chaining and take a look at how clean your code
-will be. In your class functions, simply return `this` at the end of every function,
-and you can chain further class methods onto it.
+ეს პატერნი ძალიან სასარგებლოა JavaScript-ში და მას შეხვდებით მრავალ ბიბლიოთეკაში, როგორიცაა jQuery და Lodash. ეს საშუალებას აძლევს თქვენს კოდს იყოს უფრო ექსპრესიული  და კომპაქტური. ამ მიზეზის გამო გირჩევთ გამოიყენოთ chaining პატერნის მეთოდი და ნახავთ რამდენად სუფთა გამოვა თქვენი კოდი. თქვენი კლასის ფუნქციების ბოლოს მარტივად დააბრუნებთ this-ს და შეძლებთ მას დაუკავშიროთ შემდგომი კლასის მეთოდები.
 
 **Bad:**
 
@@ -1256,24 +1182,16 @@ const car = new Car("Ford", "F-150", "red").setColor("pink").save();
 
 **[⬆ back to top](#table-of-contents)**
 
-### Prefer composition over inheritance
+### მემკვიდრეობასთან შედარებით უპირატესობა მიანიჭეთ კომპოზიციას
 
-As stated famously in [_Design Patterns_](https://en.wikipedia.org/wiki/Design_Patterns) by the Gang of Four,
-you should prefer composition over inheritance where you can. There are lots of
-good reasons to use inheritance and lots of good reasons to use composition.
-The main point for this maxim is that if your mind instinctively goes for
-inheritance, try to think if composition could model your problem better. In some
-cases it can.
+„ოთხი ბანდიტის“ (Gang of Four) მიერ დაწერილ წიგნის [_Design Patterns_](https://en.wikipedia.org/wiki/Design_Patterns)-ის მიხედვით მემკვიდრეობასთან შედარებით  უპირატესობა უნდა მივანიჭოთ კომპოზიციას. თუმცა არსებობს მრავალი არგუმენტი მემკვიდრეობის გამყენების სასარგებლოდ, და პირიქითაც ბევრი კარგი არგუმენტი შეიძლება მოვიყვანოთ კომპოზიციის სასარგებლოდ. ამ მსჯელობის მთავარი აზრი ის არის, რომ თუ თქვენ ინსტინქტურად მაინც მემკვიდრეობისკენ იხრებით, ყოველთვის კითხეთ საკუთარ თავს  ხომ არ შეიძლება პრობლემის უკეთ გადაწყვეტა კომპოზიციის გამოყენებით?
 
-You might be wondering then, "when should I use inheritance?" It
-depends on your problem at hand, but this is a decent list of when inheritance
-makes more sense than composition:
+შეიძლება იკითხოთ: "როდის უნდა გამოვიყენო მემკვიდრეობა?" ეს დამოკიდებულია თქვენს პრობლემაზე. წარმოგიდგენთ შემთხვევებს როდესაც კომპოზიციის გამოყენებას ჯობია მემკვიდრეობის გამოყენება:
 
-1. Your inheritance represents an "is-a" relationship and not a "has-a"
-   relationship (Human->Animal vs. User->UserDetails).
-2. You can reuse code from the base classes (Humans can move like all animals).
-3. You want to make global changes to derived classes by changing a base class.
-   (Change the caloric expenditure of all animals when they move).
+1. თქვენი მემკვიდრეობა წარმოადგენს "is-a" ურთიერთობას და არა "has-a" ურთიერთობას (Human->Animal vs. User->UserDetails).
+2. შეგიძლიათ ხელახლა გამოიყენოთ კოდი base კლასებიდან (ადამიანებს შეუძლიათ გადაადგილება, ისევე როგორც ცხოველებს).
+3. როცა გსურთ გლობალური ცვლილებების შეტანა წარმოებულ კლასებში საბაზისო კლასის შეცვლის გზით. (შეცვალეთ ყველა ცხოველის კალორიების ხარჯი, როცა ისისნი  გადაადგილდებიან).
+
 
 **Bad:**
 
@@ -1328,16 +1246,9 @@ class Employee {
 
 ## **SOLID**
 
-### Single Responsibility Principle (SRP)
+### ერთადერთი პასუხისმგებლობის პრინციპი ( SRP - Single Responsibility Principle)
 
-As stated in Clean Code, "There should never be more than one reason for a class
-to change". It's tempting to jam-pack a class with a lot of functionality, like
-when you can only take one suitcase on your flight. The issue with this is
-that your class won't be conceptually cohesive and it will give it many reasons
-to change. Minimizing the amount of times you need to change a class is important.
-It's important because if too much functionality is in one class and you modify
-a piece of it, it can be difficult to understand how that will affect other
-dependent modules in your codebase.
+Clean Code-ის რეკომენდაციაა: "არ უნდა არსებობდეს ერთზე მეტი მიზეზი კლასის შესაცვლელად." წარმოიდგინეთ კლასი, რომელიც გადავსბულია ათასნაირი ფუნქციონალით. ეს იმას გავს, რომ სადმე სამოგზაუროდ მიდიოდეთ და ყველა საჭირო ნივთი მხოლოდ ერთ ჩემოდანში ჩატენოთ. პრობლემა ის არის, რომ თქვენი კლასი არ იქნება კონცეპტუალურად ერთგვაროვანი და მისში ცვლილების შეტანის მრავალი მიზეზი  იარსებებს. ძალიან მნიშვნელოვანია ასეთი მიზეზების რაოდენობა მინიმუმამდე დავიყვანოთ. თუ თქვენ ძალიან ბევრ ფუნქციონალს ჩატენით ერთ კლასში და შემდეგ შეეცდებით შეცვალოთ მისი ნაწილი, მაშინ ძალიან რთული იქნება იმის პროგნოზირება, თუ როგორ შეიძლება ამან გავლენა მოახდინოს სისტემის სხვა მოდულებზე.
 
 **Bad:**
 
@@ -1388,12 +1299,9 @@ class UserSettings {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Open/Closed Principle (OCP)
+### ღია/დახურული პრინციპი (OCP - Open/Closed Principle)
 
-As stated by Bertrand Meyer, "software entities (classes, modules, functions,
-etc.) should be open for extension, but closed for modification." What does that
-mean though? This principle basically states that you should allow users to
-add new functionalities without changing existing code.
+როგორც ბერტრანდ მეიერმა განაცხადა, პროგრამული ენტიტიები (კლასები, მოდულები, ფუნქციები და ა.შ.) უნდა იყოს ღია გაფართოებისთვის, მაგრამ დახურული უნდა იყოს მოდიფიკაციისთვის. რას ნიშნავს ეს პრაქტიკაში? ეს იმას ნიშნავს, რომ თქვენ უნდა მისცეთ მომხმარებლებს ახალი ფუნქციონალობის დამატების საშუალება, არსებული კოდის შეცვლის გარეშე.
 
 **Bad:**
 
@@ -1479,20 +1387,12 @@ class HttpRequester {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Liskov Substitution Principle (LSP)
+### ლისკოვის ჩანაცვლების პრინციპი (LSP - Liskov Substitution Principle)
 
-This is a scary term for a very simple concept. It's formally defined as "If S
-is a subtype of T, then objects of type T may be replaced with objects of type S
-(i.e., objects of type S may substitute objects of type T) without altering any
-of the desirable properties of that program (correctness, task performed,
-etc.)." That's an even scarier definition.
+ამ რთული ტერმინის უკან მარტივი კონცეფცია დგას. ფორმალურად ის ასე ჟღერს: "თუ S არის T-ს ქვეტიპი, მაშინ T ტიპის ობიექტები შეიძლება შეიცვალოს S ტიპის ობიექტებით (ანუ S ტიპის ობიექტებს შეუძლიათ შეცვალონ T ტიპის ობიექტები) პროგრამის თვისებებზე მნიშვნელოვანი ზემოქმედების გარეშე ( კორექტულობა, შესრულებადი ტასკი და ა.შ.). მგონი  განმარტება კიდევ უფრო ჩახლართული გამოვიდა.
 
-The best explanation for this is if you have a parent class and a child class,
-then the base class and child class can be used interchangeably without getting
-incorrect results. This might still be confusing, so let's take a look at the
-classic Square-Rectangle example. Mathematically, a square is a rectangle, but
-if you model it using the "is-a" relationship via inheritance, you quickly
-get into trouble.
+საუკეთესო ახსნა არის ის, რომ თუ თქვენ გაქვთ მშობელი და შვილობილი კლასები, მაშინ მათი გამოყენებისას ისინი შეიძლება ერთმანეთს ჩაენაცვლონ, არასწორი შედეგების მიღების გარეშე. ასეთი განმარტებაც  შეიძლება დამაბნეველი იყოს.  მოდით შევხედოთ კლასიკურ კვადრატი-მართკუთხედის მაგალითს. მათემატიკურად, კვადრატი არის მართკუთხედი, მაგრამ თუ მათ ურთიერთობას მემკვიდრეობის საშუალებით დაამოდელირებთ  ("წარმოადგენს ნაირსახეობას"), სწრაფად წააწყდებით პრობლემებს.
+
 
 **Bad:**
 
@@ -1598,21 +1498,14 @@ renderLargeShapes(shapes);
 
 **[⬆ back to top](#table-of-contents)**
 
-### Interface Segregation Principle (ISP)
+### ინტერფეისის გაყოფის პრინციპი  (ISP - Interface Segregation Principle)
 
-JavaScript doesn't have interfaces so this principle doesn't apply as strictly
-as others. However, it's important and relevant even with JavaScript's lack of
-type system.
+JavaScript- ს არ აქვს ინტერფეისები, ამიტომ ეს პრინციპი არ გამოიყენება ისე მკაცრად, როგორც სხვა პრინციპები. მიუხედავად ამისა, მნიშვნელოვანია და აქტუალურია მათი გათვალისწინებაც. 
 
-ISP states that "Clients should not be forced to depend upon interfaces that
-they do not use." Interfaces are implicit contracts in JavaScript because of
-duck typing.
+ISP -ს პრინციპი ამბობს, რომ კლიენტები არ უნდა იყვნენ დამოკიდებული იმ ინტერფეისებზე, რომლებსაც ისინი არ იყენებენ. ტიპიზაციის არარსებობის გამო JavaScript- ში ინტერფეისები წარმოადგენენ არაცხად კონტრაქტებს.
 
-A good example to look at that demonstrates this principle in JavaScript is for
-classes that require large settings objects. Not requiring clients to setup
-huge amounts of options is beneficial, because most of the time they won't need
-all of the settings. Making them optional helps prevent having a
-"fat interface".
+კარგ მაგალითად გამოდგება კლასები, რომლებიც ობიექტებისთვის ითვალისწინებენ მრავალნაირ settings. სწორი იქნება, თუ კლიენტს არ მოვთხოვთ ყველა settings-ის დაყენებას, რადგან უმეტეს შემთხვევაში ისინი არც არიან საჭირო. ოპციონლალური settings-ების  შექმნა თვიდან აგვაცილებს ინტერფეისის გაბერვას.
+
 
 **Bad:**
 
@@ -1678,26 +1571,16 @@ const $ = new DOMTraverser({
 
 ### Dependency Inversion Principle (DIP)
 
-This principle states two essential things:
+ეს პრინციპი აგვარებს ორ მნიშვნელოვან რამეს:
 
-1. High-level modules should not depend on low-level modules. Both should
-   depend on abstractions.
-2. Abstractions should not depend upon details. Details should depend on
-   abstractions.
+1. ზედა დონის მოდულები არ უნდა იყოს დამოკიდებული ქვედა დონის მოდულებზე. ერთიც და მეორეც აბსტრაქციებზე უნდა იყოს დამოკიდებული.
 
-This can be hard to understand at first, but if you've worked with AngularJS,
-you've seen an implementation of this principle in the form of Dependency
-Injection (DI). While they are not identical concepts, DIP keeps high-level
-modules from knowing the details of its low-level modules and setting them up.
-It can accomplish this through DI. A huge benefit of this is that it reduces
-the coupling between modules. Coupling is a very bad development pattern because
-it makes your code hard to refactor.
+2. აბსტრაქციები არ უნდა იყოს დამოკიდებული დეტალებზე. არამედ დეტალები უნდა იყოს დამოკიდებული აბსტრაქციებზე.
 
-As stated previously, JavaScript doesn't have interfaces so the abstractions
-that are depended upon are implicit contracts. That is to say, the methods
-and properties that an object/class exposes to another object/class. In the
-example below, the implicit contract is that any Request module for an
-`InventoryTracker` will have a `requestItems` method.
+ერთი შეხედვით ეს რთული ჩანს, მაგრამ თუ თქვენ მუშაობდით Angular.js- თან, გემახსოვრებათ, რომ  ეს პრინციპი რეალიზებული იყო დეპენდენს ინჯექშენის გამოყენებით ( Dependency Injection - DI). მიუხედავად იმისა , რომ DIP და DI არ არის იდენტური ცნებები, DIP იცავს  ზედა დონის მოდულებს ქვედა დონის მოდულების დეტალებისგან და ამას აკეთებს DI- ს მეშვეობით. DIP- ის მათავარი სიკეთე მოდულებს შორის ურთიერთკავშირების შემცირებაა. მოდულების ჩახლართულობა არის ანტიპატერნი, რადგან ეს თქვენი კოდის რეფაქტორირებას საკმაოდ ართულებს.
+
+როგორც ზემოთ აღინიშნა, JavaScript- ს არ აქვს ინტერფეისები, ასე რომ აბსტრაქციები დამოკიდებულია არაცხად კონტრაქტებზე (implicit contracts). ანუ დამოკიდებულია მეთოდებზე და თვისებებზე, რომელსაც ობიექტი/კლასი აძლევს სხვა ობიექტს/კლასს. ქვემოთ მოცემულ მაგალითში, არაცხადი კონტრაქტი (implicit contracts) იმაში მდგომარეობს, რომ InventoryTracker- ის მოთხოვნისთვის ნებისმიერ მოდულს ექნება requestItems მეთოდი.
+
 
 **Bad:**
 
@@ -1781,22 +1664,12 @@ inventoryTracker.requestItems();
 
 ## **ტესტირება**
 
-Testing is more important than shipping. If you have no tests or an
-inadequate amount, then every time you ship code you won't be sure that you
-didn't break anything. Deciding on what constitutes an adequate amount is up
-to your team, but having 100% coverage (all statements and branches) is how
-you achieve very high confidence and developer peace of mind. This means that
-in addition to having a great testing framework, you also need to use a
-[good coverage tool](https://gotwarlost.github.io/istanbul/).
+ტესტირება უფრო მნიშვნელოვანია, ვიდრე დეპლოიმენტი. თუ კოდისთვის ცოტა ტესტი გაქვთ დაწერილი ან ის საერთოდ არ გაქვთ, მაშინ პროდაქშენზე კოდის აწევისას, არ იქნბით დარწმუნებული რომ ყველაფერი სწორად იმუშავებს. თქვენი გუნდის გადასაწყვეტია, არის თუ არა საკმარისი ტესტები, მაგრამ ტესტებით  კოდის 100%-ის დაფარვა უზრუნველყოფს თქვენი კოდის მაღალ სანდოობას და თქვენც  გაცილებით მშვიდად იქნებით. აქედან გამომდინარე, გარდა იმისა, რომ უნდა გქონდეთ არჩეული ტესტირების ფრეიმვორკი, ასევე უნდა გამოიყენოთ დაფარვის [კარგი ინსტრუმენტი](https://gotwarlost.github.io/istanbul/).
 
-There's no excuse to not write tests. There are [plenty of good JS test frameworks](https://jstherightway.org/#testing-tools), so find one that your team prefers.
-When you find one that works for your team, then aim to always write tests
-for every new feature/module you introduce. If your preferred method is
-Test Driven Development (TDD), that is great, but the main point is to just
-make sure you are reaching your coverage goals before launching any feature,
-or refactoring an existing one.
+გამართლება არა აქვს პროექტში ტესტების არარსებობას. JavaScript- სთვის არსებობს ტესტირების [ბევრი კარგი ფრეიმვორკი](https://jstherightway.org/#testing-tools), ასე რომ შეარჩიეთ თქვენთვის მისაღები ფრეიმვორკი და შეეცადეთ დაწეროთ ტესტები ყოველი ახალი ფუნქციისთვის და ახალი მოდულისთვის. კარგია თუ უპირატესობას მიანიჭებთ Test Driven Development ( TDD ). მაგრამ მთავარია დარწმუნდეთ, რომ ყოველი ახალი ფიჩის აწევის ან არსებულის რეფაქტორინგის შემდეგ კოდი საკმარისადაა დაფარული ტესტებით.
 
-### Single concept per test
+
+### ყოველ ქეისს ერთი ტესტი უნდა შეესაბამებოდეს
 
 **Bad:**
 
@@ -1852,10 +1725,10 @@ describe("MomentJS", () => {
 
 ## **ასინქრონულობა**
 
-### Use Promises, not callbacks
+### გამოიყენეთ პრომისება და არა Callback ფუნქციები
 
-Callbacks aren't clean, and they cause excessive amounts of nesting. With ES2015/ES6,
-Promises are a built-in global type. Use them!
+Callback ფუნქცია აუარესებს კოდის კითხვადობას,  იწვევს კოდის ზედმეტ ჩალაგებულობას (nesting).
+ES 2015 / ES6 სტანდარტში Promises-ი არის ჩაშენებული გლობალური ტიპი. გამოიყენეთ ისინი!
 
 **Bad:**
 
@@ -1901,13 +1774,9 @@ get("https://en.wikipedia.org/wiki/Robert_Cecil_Martin")
 
 **[⬆ back to top](#table-of-contents)**
 
-### Async/Await are even cleaner than Promises
+### Async/Await კიდევ უფრო სუფთაა ვიდრე Promises
 
-Promises are a very clean alternative to callbacks, but ES2017/ES8 brings async and await
-which offer an even cleaner solution. All you need is a function that is prefixed
-in an `async` keyword, and then you can write your logic imperatively without
-a `then` chain of functions. Use this if you can take advantage of ES2017/ES8 features
-today!
+Promises არის Callback-ის ძალიან სუფთა ალტერნატივა, მაგრამ ES 2017/ ES 8 სტანდარტში გვაქვს async და await რომლებითაც კოდი კიდევ უფრო სუფთა გამოდის. ძალიან მარტივად შეგიძლიათ დაწეროთ ფუნქცია async საკვანძო სიტყვით, რის შემდეგაც შეგიძლიათ იმპერატიულად  დაწეროთ ლოგიკა - then chains-ის გამოყენების გარეშე. თუ ახლავე შეძლებთ ES 2017/ES8 ფუნქციების დანერგვას, გამოიყენეთ async/wait !
 
 **Bad:**
 
@@ -1952,19 +1821,11 @@ getCleanCodeArticle()
 
 ## **Error Handling**
 
-Thrown errors are a good thing! They mean the runtime has successfully
-identified when something in your program has gone wrong and it's letting
-you know by stopping function execution on the current stack, killing the
-process (in Node), and notifying you in the console with a stack trace.
+Thrown errors სჭირო რამეა! ის გულისხმობს, რომ როდესაც თქვენი პროგრამის შესრულებისას რაღაც არასწორედ წარიმართა, მოხდება შეცდომის დაფიქსირება. შეჩერდება ფუნქციის შესრულება, Node-ში შეჩრდება პროცესი და გამოიგზავნება კონსოლის შეტყობინება stack trace-სთნ ერთად.
 
-### Don't ignore caught errors
+### ნუ დააიგნორებთ აღმოჩენილ შეცდომებს
 
-Doing nothing with a caught error doesn't give you the ability to ever fix
-or react to said error. Logging the error to the console (`console.log`)
-isn't much better as often times it can get lost in a sea of things printed
-to the console. If you wrap any bit of code in a `try/catch` it means you
-think an error may occur there and therefore you should have a plan,
-or create a code path, for when it occurs.
+თუ დააიგნორებთ აღმოჩენილ შეცდომას, მაშინ ვერ  შეძლებთ შეასწოროთ ან რაიმე სახის რეაგირება მოახდინოთ მის დადგომაზე. კონსოლში შეცდომების აღრიცხვა (`console.log`) ბევრს არაფერს გაძლევთ, რადგან ის ხშირად შეიძლება დაიკარგოს კონსოლში გამოტანილი შეტყობინებების ზღვაში. try/catch სტრუქტურაში კოდის ნაწილის მოქცევა ნიშნავს, რომ თუ ამ კოდის ნაწილში რამე არასწორად წავიდა, გაწერილი გაქვთ მკაფიო გეგმა ამ შეცდომების ჰენდლინგისათვის.
 
 **Bad:**
 
@@ -1992,10 +1853,9 @@ try {
 }
 ```
 
-### Don't ignore rejected promises
+### ნუ დააიგნორებთ rejected პრომისები
 
-For the same reason you shouldn't ignore caught errors
-from `try/catch`.
+ისევე როგორც try/catch-ის შემთხვევაში არ უნდა დააიგნოროთ rejected პრომისები.
 
 **Bad:**
 
@@ -2031,20 +1891,12 @@ getdata()
 
 ## **ფორმატირება**
 
-Formatting is subjective. Like many rules herein, there is no hard and fast
-rule that you must follow. The main point is DO NOT ARGUE over formatting.
-There are [tons of tools](https://standardjs.com/rules.html) to automate this.
-Use one! It's a waste of time and money for engineers to argue over formatting.
+ფორმატირება ძალიან სუბიექტური საკითხია. არ არსებობს მკაცრი წესები, როდესაც საქმე ეხება ფორმატირებას. მთავარია, ამაზე კამათში დრო არ დაკარგოთ. არსებობს [უამრავი ინსტრუმენტი](https://standardjs.com/rules.html) ამ პროცესის ავტომატიზაციისთვის. ამოირჩიე ერთი-ერთი მათგანი! 
 
-For things that don't fall under the purview of automatic formatting
-(indentation, tabs vs. spaces, double vs. single quotes, etc.) look here
-for some guidance.
 
-### Use consistent capitalization
+### იყავით თანმიმდევრული მთავრული ასოების გამოყენებისას
 
-JavaScript is untyped, so capitalization tells you a lot about your variables,
-functions, etc. These rules are subjective, so your team can choose whatever
-they want. The point is, no matter what you all choose, just be consistent.
+JavaScript არატიპიზირებული ენაა, ამიტომ მთავრულმა ასოებმა გარკვეული ინფორმაცია შეიძლება მოგვცეს ცვლადების, ფუნქციების, კლასების შესახებ. წესები სუბიექტურია, თქვენს გუნდს შეუძლია აირჩიოს ნებისმიერი წესი. მთავარია, რასაც აირჩევთ, იყავით მის მიმართ ერთგული და თანმიმდევრული.
 
 **Bad:**
 
@@ -2080,11 +1932,9 @@ class Alpaca {}
 
 **[⬆ back to top](#table-of-contents)**
 
-### Function callers and callees should be close
+### განათავსეთ ერთმანეთთან ახლოს გამომძახებელი და გამოსაძახებელი ფუნქციები 
 
-If a function calls another, keep those functions vertically close in the source
-file. Ideally, keep the caller right above the callee. We tend to read code from
-top-to-bottom, like a newspaper. Because of this, make your code read that way.
+თუ ერთი ფუნქცია იძახებს მეორეს, ეს ფუნქციები ვერტიკალურად ჩაწერეთ ერთმანეთის მიყოლებით. იდეალურ შემთხვევაში, გამომძახბელი ფუნქცია ჩაწერეთ გამოსაძახებელი ფუნქციის თავზე. 
 
 **Bad:**
 
@@ -2170,9 +2020,9 @@ review.perfReview();
 
 ## **კომენტარები**
 
-### Only comment things that have business logic complexity.
+### დააკომენტარეთ მხოლოდ ის რასაც აქვს რთული ბიზნეს ლოგიკა
 
-Comments are an apology, not a requirement. Good code _mostly_ documents itself.
+კომენტარების კეთება აუცილებელი მოთხოვნა არ არის. კარგი კოდი საკუთარ თავს თვით ადოკუმენტირებს.
 
 **Bad:**
 
@@ -2215,9 +2065,9 @@ function hashIt(data) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Don't leave commented out code in your codebase
+### არ დატოვოთ დაკომენტირებული კოდი
 
-Version control exists for a reason. Leave old code in your history.
+გამოიყენეთ ვერსიების კონტროლის სისტემები. დატოვე ძველი კოდი ისტორიაში.
 
 **Bad:**
 
@@ -2236,10 +2086,9 @@ doStuff();
 
 **[⬆ back to top](#table-of-contents)**
 
-### Don't have journal comments
+### ნუ გააკეთებთ ქმედებების კომენტირებას
 
-Remember, use version control! There's no need for dead code, commented code,
-and especially journal comments. Use `git log` to get history!
+არ დაგავიწყდეთ ვერსიის კონტროლის სისტემების გამოყენება! არავითარი საჭიროება არ არსებობს შეინახოთ მკვდარი კოდი, კომენტირებული კოდი და განსაკუთრებით არ არის საჭირო ქმედებების კომენტარება. გამოიყენეთ `git log`-ი ისტორიის მისაღებად!
 
 **Bad:**
 
@@ -2265,10 +2114,9 @@ function combine(a, b) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid positional markers
+### მოერიდეთ პოზიციონირების მარკერებს
 
-They usually just add noise. Let the functions and variable names along with the
-proper indentation and formatting give the visual structure to your code.
+ისინი უბრალოდ ზედმეტ ხმაურს იწვევენ კოდში. ფუნქციების და ცვლადების სახელები, სტრიქონების სათანადო შეწევები ფორმატიებასთან ერთად, განსაზღვრავენ თქვენი კოდის ვიზუალურ სტრუქტურას.
 
 **Bad:**
 
@@ -2306,30 +2154,30 @@ const actions = function() {
 
 ## **თარგმანები**
 
-This is also available in other languages:
+ეს სახელმძღვანელო ასევე ხელმისაწვდომია სხვა ენებზე:
 
-- ![am](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Armenia.png) **Armenian**: [hanumanum/clean-code-javascript/](https://github.com/hanumanum/clean-code-javascript)
-- ![bd](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Bangladesh.png) **Bangla(বাংলা)**: [InsomniacSabbir/clean-code-javascript/](https://github.com/InsomniacSabbir/clean-code-javascript/)
-- ![br](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png) **Brazilian Portuguese**: [fesnt/clean-code-javascript](https://github.com/fesnt/clean-code-javascript)
-- ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Simplified Chinese**:
+- ![am](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Armenia.png) **სომხური**: [hanumanum/clean-code-javascript/](https://github.com/hanumanum/clean-code-javascript)
+- ![bd](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Bangladesh.png) **ბენგალური(বাংলা)**: [InsomniacSabbir/clean-code-javascript/](https://github.com/InsomniacSabbir/clean-code-javascript/)
+- ![br](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png) **ბარზილური პორტუგალიური**: [fesnt/clean-code-javascript](https://github.com/fesnt/clean-code-javascript)
+- ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **მარტივი ჩინური**:
   - [alivebao/clean-code-js](https://github.com/alivebao/clean-code-js)
   - [beginor/clean-code-javascript](https://github.com/beginor/clean-code-javascript)
-- ![tw](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Taiwan.png) **Traditional Chinese**: [AllJointTW/clean-code-javascript](https://github.com/AllJointTW/clean-code-javascript)
-- ![fr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/France.png) **French**: [GavBaros/clean-code-javascript-fr](https://github.com/GavBaros/clean-code-javascript-fr)
-- ![de](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Germany.png) **German**: [marcbruederlin/clean-code-javascript](https://github.com/marcbruederlin/clean-code-javascript)
-- ![id](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Indonesia.png) **Indonesia**: [andirkh/clean-code-javascript/](https://github.com/andirkh/clean-code-javascript/)
-- ![it](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Italy.png) **Italian**: [frappacchio/clean-code-javascript/](https://github.com/frappacchio/clean-code-javascript/)
-- ![ja](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png) **Japanese**: [mitsuruog/clean-code-javascript/](https://github.com/mitsuruog/clean-code-javascript/)
-- ![kr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png) **Korean**: [qkraudghgh/clean-code-javascript-ko](https://github.com/qkraudghgh/clean-code-javascript-ko)
-- ![pl](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Poland.png) **Polish**: [greg-dev/clean-code-javascript-pl](https://github.com/greg-dev/clean-code-javascript-pl)
-- ![ru](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png) **Russian**:
+- ![tw](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Taiwan.png) **ტრადიციული ჩინური**: [AllJointTW/clean-code-javascript](https://github.com/AllJointTW/clean-code-javascript)
+- ![fr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/France.png) **ფრანგული**: [GavBaros/clean-code-javascript-fr](https://github.com/GavBaros/clean-code-javascript-fr)
+- ![de](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Germany.png) **გერმანული**: [marcbruederlin/clean-code-javascript](https://github.com/marcbruederlin/clean-code-javascript)
+- ![id](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Indonesia.png) **ინდონეზიური**: [andirkh/clean-code-javascript/](https://github.com/andirkh/clean-code-javascript/)
+- ![it](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Italy.png) **იტალიური**: [frappacchio/clean-code-javascript/](https://github.com/frappacchio/clean-code-javascript/)
+- ![ja](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png) **იაპონური**: [mitsuruog/clean-code-javascript/](https://github.com/mitsuruog/clean-code-javascript/)
+- ![kr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png) **კორეული**: [qkraudghgh/clean-code-javascript-ko](https://github.com/qkraudghgh/clean-code-javascript-ko)
+- ![pl](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Poland.png) **პოლონური**: [greg-dev/clean-code-javascript-pl](https://github.com/greg-dev/clean-code-javascript-pl)
+- ![ru](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png) **რუსული**:
   - [BoryaMogila/clean-code-javascript-ru/](https://github.com/BoryaMogila/clean-code-javascript-ru/)
   - [maksugr/clean-code-javascript](https://github.com/maksugr/clean-code-javascript)
-- ![es](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png) **Spanish**: [tureey/clean-code-javascript](https://github.com/tureey/clean-code-javascript)
-- ![es](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Uruguay.png) **Spanish**: [andersontr15/clean-code-javascript](https://github.com/andersontr15/clean-code-javascript-es)
-- ![rs](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Serbia.png) **Serbian**: [doskovicmilos/clean-code-javascript/](https://github.com/doskovicmilos/clean-code-javascript)
-- ![tr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Turkey.png) **Turkish**: [bsonmez/clean-code-javascript](https://github.com/bsonmez/clean-code-javascript/tree/turkish-translation)
-- ![ua](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Ukraine.png) **Ukrainian**: [mindfr1k/clean-code-javascript-ua](https://github.com/mindfr1k/clean-code-javascript-ua)
-- ![vi](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) **Vietnamese**: [hienvd/clean-code-javascript/](https://github.com/hienvd/clean-code-javascript/)
+- ![es](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png) **ესპანური**: [tureey/clean-code-javascript](https://github.com/tureey/clean-code-javascript)
+- ![es](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Uruguay.png) **ესპანური**: [andersontr15/clean-code-javascript](https://github.com/andersontr15/clean-code-javascript-es)
+- ![rs](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Serbia.png) **სერბული**: [doskovicmilos/clean-code-javascript/](https://github.com/doskovicmilos/clean-code-javascript)
+- ![tr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Turkey.png) **თურქული**: [bsonmez/clean-code-javascript](https://github.com/bsonmez/clean-code-javascript/tree/turkish-translation)
+- ![ua](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Ukraine.png) **უკრაინული**: [mindfr1k/clean-code-javascript-ua](https://github.com/mindfr1k/clean-code-javascript-ua)
+- ![vi](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) **ვიეტნამური**: [hienvd/clean-code-javascript/](https://github.com/hienvd/clean-code-javascript/)
 
 **[⬆ back to top](#table-of-contents)**
