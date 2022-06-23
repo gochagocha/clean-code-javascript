@@ -20,7 +20,7 @@
 ![Humorous image of software quality estimation as a count of how many expletives
 you shout when reading code](https://www.osnews.com/images/comics/wtfm.jpg)
 
-სტატიაში აღწერილია პროგრამის სწორად წერის პრინციპები, რომელიც წარმოადგენს რობერტ ს. მარტინის წიგნის [_Clean Code_](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
+სტატიაში აღწერილია კოდის სწორად წერის პრინციპები, რომელიც წარმოადგენს რობერტ ს. მარტინის წიგნის [_Clean Code_](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
 ადაპტირებულ ვარიანტს JavaScript-ისთვის. სახელმძღვანელოში აღწერილია პრინციპები, თუ როგორ უნდა დაიწეროს კოდი JavaScript-ში, რათა ის იყოს [წაკითხვადი (readable), ხელახლა გამოყენებადი (reusable) და რეფაქტორირებადი (refactorable).](https://github.com/ryanmcdermott/3rs-of-software-architecture)
 
 რა თქმა უნდა სახელმძღვანელოში წარმოდგენილ ყველა პრინციპს მკაცრად ვერ დაიცავთ, თუმცა გახსოვდეთ, რომ ეს გაიდლაინები შემუშავებულია _Clean Code_-ის ავტორთა მრავალწლიანი გამოცდილების გათვალისწინებით.
