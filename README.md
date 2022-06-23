@@ -2164,7 +2164,7 @@ const actions = function() {
   - [beginor/clean-code-javascript](https://github.com/beginor/clean-code-javascript)
 - ![tw](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Taiwan.png) **ტრადიციული ჩინური**: [AllJointTW/clean-code-javascript](https://github.com/AllJointTW/clean-code-javascript)
 - ![fr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/France.png) **ფრანგული**: [GavBaros/clean-code-javascript-fr](https://github.com/GavBaros/clean-code-javascript-fr)
-- ![ge](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Georgia.png) **ქართული**: [marcbruederlin/clean-code-javascript](https://github.com/marcbruederlin/clean-code-javascript)
+- ![ge](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Georgia.png) **ქართული**: [gochagocha/clean-code-javascript](https://github.com/gochagocha/clean-code-javascript.git)
 - ![de](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Germany.png) **გერმანული**: [marcbruederlin/clean-code-javascript](https://github.com/marcbruederlin/clean-code-javascript)
 - ![id](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Indonesia.png) **ინდონეზიური**: [andirkh/clean-code-javascript/](https://github.com/andirkh/clean-code-javascript/)
 - ![it](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Italy.png) **იტალიური**: [frappacchio/clean-code-javascript/](https://github.com/frappacchio/clean-code-javascript/)
