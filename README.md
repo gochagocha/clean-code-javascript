@@ -33,23 +33,23 @@ you shout when reading code](https://www.osnews.com/images/comics/wtfm.jpg)
 
 ### გამოიყენეთ გააზრებული და სიტყვიერად გამოთქმადი ცვლადის სახელები
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 const yyyymmdstr = moment().format("YYYY/MM/DD");
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 const currentDate = moment().format("YYYY/MM/DD");
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ გადასვლა დასაწყისში](#table-of-contents)**
 
 ### გამოიყენეთ ერთი ტერმინი ერთი და იგივე ტიპის ცვლადისთვის
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 getUserInfo();
@@ -57,13 +57,13 @@ getClientData();
 getCustomerRecord();
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 getUser();
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ გადასვლა დასაწყისში](#table-of-contents)**
 
 ### გამოიყენეთ ძებნადი სახელები
 
@@ -72,14 +72,14 @@ getUser();
 [ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md)
 დაგეხმარებათ უსახელო მუდმივების იდენტიფიცირებაში.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 // What the heck is 86400000 for?
 setTimeout(blastOff, 86400000);
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 // Declare them as capitalized named constants.
@@ -92,7 +92,7 @@ setTimeout(blastOff, MILLISECONDS_PER_DAY);
 
 ### გამოიყენეთ განმარტებითი ცვლადები
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 const address = "One Infinite Loop, Cupertino 95014";
@@ -103,7 +103,7 @@ saveCityZipCode(
 );
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 const address = "One Infinite Loop, Cupertino 95014";
@@ -118,7 +118,7 @@ saveCityZipCode(city, zipCode);
 
 ცვლადის ცხადად დასახელება სჯობს ნაგულისხმევ ცვლადს.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 const locations = ["Austin", "New York", "San Francisco"];
@@ -133,7 +133,7 @@ locations.forEach(l => {
 });
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 const locations = ["Austin", "New York", "San Francisco"];
@@ -153,7 +153,7 @@ locations.forEach(location => {
 
 თუ თქვენი კლასის/ობიექტის სახელი რაღაცას გეუბნებათ, ნუ გაიმეორებთ იგივე დასახელებას  თქვენი ცვლადის სახელშიც.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 const Car = {
@@ -167,7 +167,7 @@ function paintCar(car, color) {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 const Car = {
@@ -187,7 +187,7 @@ function paintCar(car, color) {
 
 დეფაულტ არგუმენტები ხშირად უფრო გასაგებია, ვიდრე short circuiting . გაითვალისწინეთ, რომ თუ მათ იყენებთ, თქვენი ფუნქცია უზრუნველყოფს მხოლოდ დეფაულტ მნიშვნელობებს undefined არგუმენტებისთვის. სხვა "falsy" მნიშვნელობები, როგორიცაა ' ', " ", false, null, 0 და NaN, არ შეიცვლება დეფაულტ მნიშვნელობით.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 function createMicrobrewery(name) {
@@ -196,7 +196,7 @@ function createMicrobrewery(name) {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function createMicrobrewery(name = "Hipster Brew Co.") {
@@ -226,7 +226,7 @@ function createMicrobrewery(name = "Hipster Brew Co.") {
 
 
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 function createMenu(title, body, buttonText, cancellable) {
@@ -237,7 +237,7 @@ createMenu("Foo", "Bar", "Baz", true);
 
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function createMenu({ title, body, buttonText, cancellable }) {
@@ -258,7 +258,7 @@ createMenu({
 
 ეს არის ყველაზე მნიშვნელოვანი წესი კოდის წერის დროს. როდესაც ფუნქციები ერთზე მეტ რამეს აკეთებენ, რთულდება მათი გაერთიანება,  ტესტირება და ანალიზი. თუ თქვენ შეძელით ფუნქციის იზოლირება ისე, რომ  ის მხოლოდ ერთ მოქმედებას აკეთბს, მაშინ გაგიადველდებათ საჭიროების შემთხვევაში მისი მარტივად გადაკეთება და თქვენი კოდის გარჩევა გაცილებით ადვილი იქნება. იმ შემთხვევაშიც კი, თუ ამ სახელმძღვანელოდან მხოლოდ ამ რჩევას გაითვალისწინებთ, ბევრ დეველოპერს უკან ჩამოიტოვებთ. :)
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 function emailClients(clients) {
@@ -271,7 +271,7 @@ function emailClients(clients) {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function emailActiveClients(clients) {
@@ -288,7 +288,7 @@ function isActiveClient(client) {
 
 ### ფუნქციის სახელმა უნდა გვითხრას თუ რას აკეთებს ის
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 function addToDate(date, month) {
@@ -301,7 +301,7 @@ const date = new Date();
 addToDate(date, 1);
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function addMonthToDate(month, date) {
@@ -318,7 +318,7 @@ addMonthToDate(1, date);
 
 როდესაც გაქვთ აბსტრაქციის ერთზე მეტი დონე, როგორც წესი ფუნქცია ზედმეტად  ბევრს აკეთებს. ფუნქციების დაყოფა იძლევა მათი მრავალჯერადი გამოყენებას საშუალებას ასევე უფრო მარტივდება მისი ტესტირება.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 function parseBetterJSAlternative(code) {
@@ -345,7 +345,7 @@ function parseBetterJSAlternative(code) {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function parseBetterJSAlternative(code) {
@@ -392,7 +392,7 @@ function parse(tokens) {
 
 აბსტრაქციის შექმნას გადამწყვეტი მნიშვნელობა აქვს, ამიტომ თქვენ უნდა გაითვალისწინოთ კლასების პროექტირების პრინციპები (SOLID პრინციპები), რომელიც ქვემოთაა მოცემული. ცუდად შედგენილი აბსტრაქციები შეიძლება უარესი იყოს ვიდრე კოდის დუბლირება, ასე რომ ყურადღებით იყავით აბსტრაქციებთან. სხვა სიტყვებით რომ ვთქვათ, თუ შეგიძლიათ კარგი აბსტრაქციის შედგენა, შეადგინეთ! თუ არადა შეეგუეთ იმ აზრს, რომ ერთი პატარა ლოგიკის შეცვლის გამო მოგიწევთ ბევრ ადგილას კოდის შეცვლა. :)
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 function showDeveloperList(developers) {
@@ -426,7 +426,7 @@ function showManagerList(managers) {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function showEmployeeList(employees) {
@@ -457,7 +457,7 @@ function showEmployeeList(employees) {
 
 ### ობიექტის ველების დეფაულტ მნიშვნელობები დააყენეთ Object.assign-ით
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 const menuConfig = {
@@ -478,7 +478,7 @@ function createMenu(config) {
 createMenu(menuConfig);
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 const menuConfig = {
@@ -512,7 +512,7 @@ createMenu(menuConfig);
 
 დროშების გამოყენება იმას მიუთითებს, რომ ეს ფუნქცია ერთზე მეტ რამეს აკეთებს. თუ ლოგიკური პარამეტრის შესაბამისად ის სხვადასხვა კოდს ასრულებს, მაშინ გაყავით თქვენი ფუნქცია.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 function createFile(name, temp) {
@@ -524,7 +524,7 @@ function createFile(name, temp) {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function createFile(name) {
@@ -547,7 +547,7 @@ function createTempFile(name) {
 მთავარია, თავიდან ავიცილოთ ისეთი გავრცელებული შეცდომები, როგორებიცაა: ობიექტებს შორის ყოველგვარი სტრუქტურის გარეშე  გაზიარებული state-ები, ასევე ცვალებადი ტიპების მონაცემთა გამოყენება, რომლებსაც შეიძლება ნებისმიერი მნიშვნელობა მიენიჭოს. თუ ამის თავიდან აცილებას შეძლებთ, თქვენ უფრო ბედნიერი იქნებით, ვიდრე პროგრამისტების დიდი უმრავლესობა.
 
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 // Global variable referenced by following function.
@@ -563,7 +563,7 @@ splitIntoFirstAndLastName();
 console.log(name); // ['Ryan', 'McDermott'];
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function splitIntoFirstAndLastName(name) {
@@ -596,7 +596,7 @@ JavaScript-ში ზოგიერთი მნიშვნელობებ�
 3.	დიდი ობიექტების კლონირება შეიძლება ძალიან რთული აღმოჩნდეს შესრულების თვალსაზრისით. საბედნიეროდ არსებობს 
    [მშვენიერი  ბიბლიოთეკები ](https://facebook.github.io/immutable-js/) რომლებიც საშუალებას გვაძლევს სწრაფად განხორციელდეს ეს მიდგომა, თან მეხსიერებაც ნაკლებად დაიხარჯოს, როგორც ეს იქნებოდა ობიექტებისა და მასივების ხელით კლონირების შემთხვევაში.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 const addItemToCart = (cart, item) => {
@@ -604,7 +604,7 @@ const addItemToCart = (cart, item) => {
 };
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 const addItemToCart = (cart, item) => {
@@ -618,7 +618,7 @@ const addItemToCart = (cart, item) => {
 
 გლობალური ობიექტის დაბინძურება JavaScript-ში ცუდი პრაქტიკაა, რადგან შეიძლება მოხდეს სხვა ბიბლიოთეკასთან კონფლიქტი და თქვენი API-ს მომხმარებელი დიდ გაუგებრობაში აღმოჩნდეს exception–ის მიღების შემთხვევაშიც კი. მოდით განვიხილოთ მაგალითი: რა ვქნათ, თუკი გვინდა განვახორციელოთ გლობალური ობიექტი Array–ის extend-ი, ისე რომ მას ჰქონდეს diff  მეთოდი, რომელიც აჩვენებდა განსხვავებას ორ მასივს შორის? Array.prototype-სთვის, თქვენ შეგიძლიათ დაწეროთ ახალი მეთოდი, მაგრამ ის შეიძლება კონფლიკტში მოვიდეს სხვა ბიბლიოთეკასთან, რომელიც ცდილობდა იგივეს გაკეთებას. ხომ არ აჯობებდა, რომ ამ სხვა ბიბლიოთეკის diff  მეთოდს ეჩვენებინა არა მასივებს შორის განსხვავება, არამედ მასივების პირველ და ბოლო ელემენტებს შორის განსხვავება? აი რატომაა ბევრად უკეთესი გამოვიყენოთ ES2015/ES6 კლასები და უბრალოდ გავაფართოვოთ (extend) გლობალური ობიექტი array. 
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 Array.prototype.diff = function diff(comparisonArray) {
@@ -627,7 +627,7 @@ Array.prototype.diff = function diff(comparisonArray) {
 };
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 class SuperArray extends Array {
@@ -644,7 +644,7 @@ class SuperArray extends Array {
 
 JavaScript არ არის Haskell–ისნაერი ფუნქციონალური ენა, მაგრამ ის მშვენივრად მეგობრობს ფუნქციონალურობასთანაც. ფუნქციონალურ ენებზე უფრო სუფთა კოდი იწერება და თან ადვილად იტესტება. გამოიყენეთ პროგრამირების ეს სტილის, როცა კი ეს შესაძლებელია.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 const programmerOutput = [
@@ -673,7 +673,7 @@ for (let i = 0; i < programmerOutput.length; i++) {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 const programmerOutput = [
@@ -705,7 +705,7 @@ const totalOutput = programmerOutput.reduce(
 
 ### განახორციელეთ პირობების ინკაფსულაცია
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 if (fsm.state === "fetching" && isEmpty(listNode)) {
@@ -713,7 +713,7 @@ if (fsm.state === "fetching" && isEmpty(listNode)) {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function shouldShowSpinner(fsm, listNode) {
@@ -729,7 +729,7 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
 
 ### მოერიდეთ უარყოფით პირობებს
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 function isDOMNodeNotPresent(node) {
@@ -741,7 +741,7 @@ if (!isDOMNodeNotPresent(node)) {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function isDOMNodePresent(node) {
@@ -759,7 +759,7 @@ if (isDOMNodePresent(node)) {
 
 ერთი შეხედვით შეუძლებელია ამ რეკომენდაციის გათვალისწინება. უმეტეს შემთხვევაში პირველი რეაქცია ასეთია: "როგორ უნდა დავწერო კოდი if-ის გარეშე ?". გამოსავალი იმაში მდგომარეობს, რომ ხშირ შემთხვევაში შეგიძლიათ გამოიყენოთ პოლიმორფიზმი if-ის ჩასანაცვლებლად. როგორც წესი, ჩნდება სხვა კითხვაც: "კარგი, მაგრამ რატომ უნდა გავითვალისწინო ეგ რჩევა?". პასუხი Clean Code-ის ერთ-ერთ პრინციპში შეგიძლიათ ამოიკითხოთ: ფუნქციამ მხოლოდ ერთი რამ უნდა გააკეთოს. თუ თქვენ გაქვთ კლასები და ფუნქციები, რომლებშიც if ოპერატორს იყენებთ, თქვენ ამით აღიარებთ, რომ თქვენი ფუნქცია ერთზე მეტ რამეს აკეთებს. დაიმახსოვრე, ფუნქციამ მხოლოდ ერთი რამე უნდა გააკეთოს.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 class Airplane {
@@ -777,7 +777,7 @@ class Airplane {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 class Airplane {
@@ -812,7 +812,7 @@ class Cessna extends Airplane {
 
 JavaScript წრმოადგენს არატიპიზირებულ პროგრამირების ენას, ანუ თქვენს ფუნქციებს შეუძლიათ ნებისმიერი ტიპის არგუმენტი მიიღონ. ზოგჯერ ეს თავისუფლება საქმეს გიფუჭებთ და დიდია ტიპების შემოწმების ცდუნება. ამის თავიდან ასაცილებლად მრავალი გზა არსებობს. პირველი არის – თანმიმდევრული API.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 function travelToTexas(vehicle) {
@@ -824,7 +824,7 @@ function travelToTexas(vehicle) {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function travelToTexas(vehicle) {
@@ -841,7 +841,7 @@ function travelToTexas(vehicle) {
 არ დააჭუჭყიანოთ JavaScript კოდი, დაწერეთ კარგი ტესტები და ხშირად გაუკეთეთ კოდს რევიუ. ან კიდე ყველაფერი აკონტროლეთ TypeScript-ის გამოყენებით (რომელიც, როგორც ვთქვით, ყოველივე ამის შესანიშნავი ალტერნატივაა!).
 
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 function combine(val1, val2) {
@@ -856,7 +856,7 @@ function combine(val1, val2) {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function combine(val1, val2) {
@@ -870,7 +870,7 @@ function combine(val1, val2) {
 
 თანამედროვე ბრაუზერები საკმაოდ კარგ ოპტიმიზაციას უკეთებენ კოდს. უმეტეს შემთხვევაში, თქვენს მიერ კოდის ოპტიმიზაციისთვის დახარჯული დრო ტყვილად დაკარგული დროა. [არსებობს კარგი რესურსები]( https://github.com/petkaantonov/bluebird/wiki/Optimization-killers ), რომლებიც გიჩვენებენ სადაა არასაკმარისად ოპტიმიზირებული კოდი. მანამდე გამოიყენეთ ისინი, სანამ სიტუაცია არ გამოსწორდება. 
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 // On old browsers, each iteration with uncached `list.length` would be costly
@@ -880,7 +880,7 @@ for (let i = 0, len = list.length; i < len; i++) {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 for (let i = 0; i < list.length; i++) {
@@ -894,7 +894,7 @@ for (let i = 0; i < list.length; i++) {
 
 მკვდარი კოდი ისეთივე ცუდია, როგორც დუბლირებული კოდი. არ არსებობს მიზეზი, რომ ის კოდში შეინახოთ. თუ კოდი არ გამოიყენება, მოიშორეთ! საჭიროების შემთხვევაში, მისი აღდგენა ყოველთვის შეგიძლიათ ვერსიების ისტორიიდან.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 function oldRequestModule(url) {
@@ -909,7 +909,7 @@ const req = newRequestModule;
 inventoryTracker("apples", req, "www.inventory-awesome.io");
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function newRequestModule(url) {
@@ -935,7 +935,7 @@ inventoryTracker("apples", req, "www.inventory-awesome.io");
 - თქვენ შეგიძლიათ გამოიყენოთ თქვენი ობიექტის თვისებების lazy load. ვთქვათ, სერვერიდან მათი მიღებისას.
 
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 function makeBankAccount() {
@@ -951,7 +951,7 @@ const account = makeBankAccount();
 account.balance = 100;
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function makeBankAccount() {
@@ -986,7 +986,7 @@ account.setBalance(100);
 
 ამის მიღწევა შესაძლებელია closures გამოყენებით (ES5 სტანდარტიდან).
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 const Employee = function(name) {
@@ -1003,7 +1003,7 @@ delete employee.name;
 console.log(`Employee name: ${employee.getName()}`); // Employee name: undefined
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function makeEmployee(name) {
@@ -1028,7 +1028,7 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 
 ძალიან რთულია წაკითხვადი (readable) კლასის მემკვიდრეობის, კონსტრუქციის და მეთოდების განმარტებების მიღება კლასიკური ES5 კლასებისთვის. თუ თქვენ გჭირდებათ მემკვიდრეობა, მაშინ უპირატესობა მიანიჭეთ ES2015/ES6 კლასებს. თუმცა, უპირატესობა მიანიჭეთ მცირე ფუნქციების გამოყენებას კლასებთან შედარებით, სანამ არ აღმოჩნდებით, რომ გჭირდებათ უფრო დიდი და კომპლექსური ობიექტები.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 const Animal = function(age) {
@@ -1068,7 +1068,7 @@ Human.prototype.constructor = Human;
 Human.prototype.speak = function speak() {};
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 class Animal {
@@ -1110,7 +1110,7 @@ class Human extends Mammal {
 
 ეს პატერნი ძალიან სასარგებლოა JavaScript-ში და მას შეხვდებით მრავალ ბიბლიოთეკაში, როგორიცაა jQuery და Lodash. ეს საშუალებას აძლევს თქვენს კოდს იყოს უფრო ექსპრესიული  და კომპაქტური. ამ მიზეზის გამო გირჩევთ გამოიყენოთ chaining პატერნის მეთოდი და ნახავთ რამდენად სუფთა გამოვა თქვენი კოდი. თქვენი კლასის ფუნქციების ბოლოს მარტივად დააბრუნებთ this-ს და შეძლებთ მას დაუკავშიროთ შემდგომი კლასის მეთოდები.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 class Car {
@@ -1142,7 +1142,7 @@ car.setColor("pink");
 car.save();
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 class Car {
@@ -1193,7 +1193,7 @@ const car = new Car("Ford", "F-150", "red").setColor("pink").save();
 3. როცა გსურთ გლობალური ცვლილებების შეტანა წარმოებულ კლასებში საბაზისო კლასის შეცვლის გზით. (შეცვალეთ ყველა ცხოველის კალორიების ხარჯი, როცა ისისნი  გადაადგილდებიან).
 
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 class Employee {
@@ -1217,7 +1217,7 @@ class EmployeeTaxData extends Employee {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 class EmployeeTaxData {
@@ -1250,7 +1250,7 @@ class Employee {
 
 Clean Code-ის რეკომენდაციაა: "არ უნდა არსებობდეს ერთზე მეტი მიზეზი კლასის შესაცვლელად." წარმოიდგინეთ კლასი, რომელიც გადავსბულია ათასნაირი ფუნქციონალით. ეს იმას გავს, რომ სადმე სამოგზაუროდ მიდიოდეთ და ყველა საჭირო ნივთი მხოლოდ ერთ ჩემოდანში ჩატენოთ. პრობლემა ის არის, რომ თქვენი კლასი არ იქნება კონცეპტუალურად ერთგვაროვანი და მისში ცვლილების შეტანის მრავალი მიზეზი  იარსებებს. ძალიან მნიშვნელოვანია ასეთი მიზეზების რაოდენობა მინიმუმამდე დავიყვანოთ. თუ თქვენ ძალიან ბევრ ფუნქციონალს ჩატენით ერთ კლასში და შემდეგ შეეცდებით შეცვალოთ მისი ნაწილი, მაშინ ძალიან რთული იქნება იმის პროგნოზირება, თუ როგორ შეიძლება ამან გავლენა მოახდინოს სისტემის სხვა მოდულებზე.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 class UserSettings {
@@ -1270,7 +1270,7 @@ class UserSettings {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 class UserAuth {
@@ -1303,7 +1303,7 @@ class UserSettings {
 
 როგორც ბერტრანდ მეიერმა განაცხადა, პროგრამული ენტიტიები (კლასები, მოდულები, ფუნქციები და ა.შ.) უნდა იყოს ღია გაფართოებისთვის, მაგრამ დახურული უნდა იყოს მოდიფიკაციისთვის. რას ნიშნავს ეს პრაქტიკაში? ეს იმას ნიშნავს, რომ თქვენ უნდა მისცეთ მომხმარებლებს ახალი ფუნქციონალობის დამატების საშუალება, არსებული კოდის შეცვლის გარეშე.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 class AjaxAdapter extends Adapter {
@@ -1347,7 +1347,7 @@ function makeHttpCall(url) {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 class AjaxAdapter extends Adapter {
@@ -1394,7 +1394,7 @@ class HttpRequester {
 საუკეთესო ახსნა არის ის, რომ თუ თქვენ გაქვთ მშობელი და შვილობილი კლასები, მაშინ მათი გამოყენებისას ისინი შეიძლება ერთმანეთს ჩაენაცვლონ, არასწორი შედეგების მიღების გარეშე. ასეთი განმარტებაც  შეიძლება დამაბნეველი იყოს.  მოდით შევხედოთ კლასიკურ კვადრატი-მართკუთხედის მაგალითს. მათემატიკურად, კვადრატი არის მართკუთხედი, მაგრამ თუ მათ ურთიერთობას მემკვიდრეობის საშუალებით დაამოდელირებთ  ("წარმოადგენს ნაირსახეობას"), სწრაფად წააწყდებით პრობლემებს.
 
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 class Rectangle {
@@ -1440,7 +1440,7 @@ function renderLargeRectangles(rectangles) {
   rectangles.forEach(rectangle => {
     rectangle.setWidth(4);
     rectangle.setHeight(5);
-    const area = rectangle.getArea(); // BAD: Returns 25 for Square. Should be 20.
+    const area = rectangle.getArea(); // ცუდია: Returns 25 for Square. Should be 20.
     rectangle.render(area);
   });
 }
@@ -1449,7 +1449,7 @@ const rectangles = [new Rectangle(), new Rectangle(), new Square()];
 renderLargeRectangles(rectangles);
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 class Shape {
@@ -1507,7 +1507,7 @@ ISP -ს პრინციპი ამბობს, რომ კლიენ�
 კარგ მაგალითად გამოდგება კლასები, რომლებიც ობიექტებისთვის ითვალისწინებენ მრავალნაირ settings. სწორი იქნება, თუ კლიენტს არ მოვთხოვთ ყველა settings-ის დაყენებას, რადგან უმეტეს შემთხვევაში ისინი არც არიან საჭირო. ოპციონლალური settings-ების  შექმნა თვიდან აგვაცილებს ინტერფეისის გაბერვას.
 
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 class DOMTraverser {
@@ -1533,7 +1533,7 @@ const $ = new DOMTraverser({
 });
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 class DOMTraverser {
@@ -1582,7 +1582,7 @@ const $ = new DOMTraverser({
 როგორც ზემოთ აღინიშნა, JavaScript- ს არ აქვს ინტერფეისები, ასე რომ აბსტრაქციები დამოკიდებულია არაცხად კონტრაქტებზე (implicit contracts). ანუ დამოკიდებულია მეთოდებზე და თვისებებზე, რომელსაც ობიექტი/კლასი აძლევს სხვა ობიექტს/კლასს. ქვემოთ მოცემულ მაგალითში, არაცხადი კონტრაქტი (implicit contracts) იმაში მდგომარეობს, რომ InventoryTracker- ის მოთხოვნისთვის ნებისმიერ მოდულს ექნება requestItems მეთოდი.
 
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 class InventoryRequester {
@@ -1599,7 +1599,7 @@ class InventoryTracker {
   constructor(items) {
     this.items = items;
 
-    // BAD: We have created a dependency on a specific request implementation.
+    // ცუდია: We have created a dependency on a specific request implementation.
     // We should just have requestItems depend on a request method: `request`
     this.requester = new InventoryRequester();
   }
@@ -1615,7 +1615,7 @@ const inventoryTracker = new InventoryTracker(["apples", "bananas"]);
 inventoryTracker.requestItems();
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 class InventoryTracker {
@@ -1671,7 +1671,7 @@ inventoryTracker.requestItems();
 
 ### ყოველ ქეისს ერთი ტესტი უნდა შეესაბამებოდეს
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 import assert from "assert";
@@ -1695,7 +1695,7 @@ describe("MomentJS", () => {
 });
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 import assert from "assert";
@@ -1730,7 +1730,7 @@ describe("MomentJS", () => {
 Callback ფუნქცია აუარესებს კოდის კითხვადობას,  იწვევს კოდის ზედმეტ ჩალაგებულობას (nesting).
 ES 2015 / ES6 სტანდარტში Promises-ი არის ჩაშენებული გლობალური ტიპი. გამოიყენეთ ისინი!
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 import { get } from "request";
@@ -1754,7 +1754,7 @@ get(
 );
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 import { get } from "request-promise";
@@ -1778,7 +1778,7 @@ get("https://en.wikipedia.org/wiki/Robert_Cecil_Martin")
 
 Promises არის Callback-ის ძალიან სუფთა ალტერნატივა, მაგრამ ES 2017/ ES 8 სტანდარტში გვაქვს async და await რომლებითაც კოდი კიდევ უფრო სუფთა გამოდის. ძალიან მარტივად შეგიძლიათ დაწეროთ ფუნქცია async საკვანძო სიტყვით, რის შემდეგაც შეგიძლიათ იმპერატიულად  დაწეროთ ლოგიკა - then chains-ის გამოყენების გარეშე. თუ ახლავე შეძლებთ ES 2017/ES8 ფუნქციების დანერგვას, გამოიყენეთ async/wait !
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 import { get } from "request-promise";
@@ -1796,7 +1796,7 @@ get("https://en.wikipedia.org/wiki/Robert_Cecil_Martin")
   });
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 import { get } from "request-promise";
@@ -1827,7 +1827,7 @@ Thrown errors სჭირო რამეა! ის გულისხმო�
 
 თუ დააიგნორებთ აღმოჩენილ შეცდომას, მაშინ ვერ  შეძლებთ შეასწოროთ ან რაიმე სახის რეაგირება მოახდინოთ მის დადგომაზე. კონსოლში შეცდომების აღრიცხვა (`console.log`) ბევრს არაფერს გაძლევთ, რადგან ის ხშირად შეიძლება დაიკარგოს კონსოლში გამოტანილი შეტყობინებების ზღვაში. try/catch სტრუქტურაში კოდის ნაწილის მოქცევა ნიშნავს, რომ თუ ამ კოდის ნაწილში რამე არასწორად წავიდა, გაწერილი გაქვთ მკაფიო გეგმა ამ შეცდომების ჰენდლინგისათვის.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 try {
@@ -1837,7 +1837,7 @@ try {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 try {
@@ -1857,7 +1857,7 @@ try {
 
 ისევე როგორც try/catch-ის შემთხვევაში არ უნდა დააიგნოროთ rejected პრომისები.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 getdata()
@@ -1869,7 +1869,7 @@ getdata()
   });
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 getdata()
@@ -1898,7 +1898,7 @@ getdata()
 
 JavaScript არატიპიზირებული ენაა, ამიტომ მთავრულმა ასოებმა გარკვეული ინფორმაცია შეიძლება მოგვცეს ცვლადების, ფუნქციების, კლასების შესახებ. წესები სუბიექტურია, თქვენს გუნდს შეუძლია აირჩიოს ნებისმიერი წესი. მთავარია, რასაც აირჩევთ, იყავით მის მიმართ ერთგული და თანმიმდევრული.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 const DAYS_IN_WEEK = 7;
@@ -1914,7 +1914,7 @@ class animal {}
 class Alpaca {}
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 const DAYS_IN_WEEK = 7;
@@ -1936,7 +1936,7 @@ class Alpaca {}
 
 თუ ერთი ფუნქცია იძახებს მეორეს, ეს ფუნქციები ვერტიკალურად ჩაწერეთ ერთმანეთის მიყოლებით. იდეალურ შემთხვევაში, გამომძახბელი ფუნქცია ჩაწერეთ გამოსაძახებელი ფუნქციის თავზე. 
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 class PerformanceReview {
@@ -1976,7 +1976,7 @@ const review = new PerformanceReview(employee);
 review.perfReview();
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 class PerformanceReview {
@@ -2024,7 +2024,7 @@ review.perfReview();
 
 კომენტარების კეთება აუცილებელი მოთხოვნა არ არის. კარგი კოდი საკუთარ თავს თვით ადოკუმენტირებს.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 function hashIt(data) {
@@ -2046,7 +2046,7 @@ function hashIt(data) {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function hashIt(data) {
@@ -2069,7 +2069,7 @@ function hashIt(data) {
 
 გამოიყენეთ ვერსიების კონტროლის სისტემები. დატოვე ძველი კოდი ისტორიაში.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 doStuff();
@@ -2078,7 +2078,7 @@ doStuff();
 // doSoMuchStuff();
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 doStuff();
@@ -2090,7 +2090,7 @@ doStuff();
 
 არ დაგავიწყდეთ ვერსიის კონტროლის სისტემების გამოყენება! არავითარი საჭიროება არ არსებობს შეინახოთ მკვდარი კოდი, კომენტირებული კოდი და განსაკუთრებით არ არის საჭირო ქმედებების კომენტარება. გამოიყენეთ `git log`-ი ისტორიის მისაღებად!
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 /**
@@ -2104,7 +2104,7 @@ function combine(a, b) {
 }
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 function combine(a, b) {
@@ -2118,7 +2118,7 @@ function combine(a, b) {
 
 ისინი უბრალოდ ზედმეტ ხმაურს იწვევენ კოდში. ფუნქციების და ცვლადების სახელები, სტრიქონების სათანადო შეწევები ფორმატიებასთან ერთად, განსაზღვრავენ თქვენი კოდის ვიზუალურ სტრუქტურას.
 
-**Bad:**
+**ცუდია:**
 
 ```javascript
 ////////////////////////////////////////////////////////////////////////////////
@@ -2137,7 +2137,7 @@ const actions = function() {
 };
 ```
 
-**Good:**
+**კარგია:**
 
 ```javascript
 $scope.model = {
