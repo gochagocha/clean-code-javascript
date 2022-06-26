@@ -75,7 +75,7 @@ getUser();
 **ცუდია:**
 
 ```javascript
-// What the heck is 86400000 for?
+// გაუგებარია რა არის 86400000?
 setTimeout(blastOff, 86400000);
 ```
 
@@ -128,7 +128,7 @@ locations.forEach(l => {
   // ...
   // ...
   // ...
-  // Wait, what is `l` for again?
+  // გაუგებარია რას აღნიშნავს `l`?
   dispatch(l);
 });
 ```
@@ -499,7 +499,7 @@ function createMenu(config) {
     config
   );
   return finalConfig
-  // ახლა უკვე config წერია: {title: "Order", body: "Bar", buttonText: "Send", cancellable: true}
+  // config–ში ახლა უკვე  წერია: {title: "Order", body: "Bar", buttonText: "Send", cancellable: true}
   // ...
 }
 
@@ -550,12 +550,8 @@ function createTempFile(name) {
 **ცუდია:**
 
 ```javascript
-// Global variable referenced by following function.
-// If we had another function that used this name, now it'd be an array and it could break it.
-// Глобальная переменная, на которую ссылается следующая функция. 554 
-// Если бы у нас была другая функция, которая использовала бы это имя, теперь это был бы массив, и она могла бы его сломать.
 // გლობალური ცვლადი, რომელსაც მიმართავს მისი მომდევნო ფუნცია
-// ფუნქცია ცვლადს გარდაქმნის მასივად. სხვა ფუნქცია რომ არსებობდეს, რომელიც იგივე სახელს იყენებს, მაშინ ეს გამოიწვევდა მის გატეხვას 
+// ფუნქცია ცვლადს გარდაქმნის მასივად. სხვა ფუნქცია რომ არსებობდეს, რომელიც იგივე სახელს იყენებს, მაშინ ის დაიქრეშებოდა
 let name = "Ryan McDermott";
 
 function splitIntoFirstAndLastName() {
@@ -959,15 +955,15 @@ account.balance = 100;
 
 ```javascript
 function makeBankAccount() {
-  // this one is private
+  // ეს არის პრივატული ცვლადი
   let balance = 0;
 
-  // a "getter", made public via the returned object below
+  // "getter" არის პაბლიკი, რადგანაც ბრუნდება ობიექტში
   function getBalance() {
     return balance;
   }
 
-  // a "setter", made public via the returned object below
+  // "setter" არის პაბლიკი, რადგანაც ბრუნდება ობიექტში
   function setBalance(amount) {
     // ... validate before updating the balance
     balance = amount;
@@ -1333,22 +1329,21 @@ class HttpRequester {
   fetch(url) {
     if (this.adapter.name === "ajaxAdapter") {
       return makeAjaxCall(url).then(response => {
-        // transform response and return
+        // ტრანსფორმირებას უკეთებს პასუხს და აბრუნებს
       });
     } else if (this.adapter.name === "nodeAdapter") {
       return makeHttpCall(url).then(response => {
-        // transform response and return
+        // ტრანსფორმირებას უკეთებს პასუხს და აბრუნებს
       });
     }
   }
 }
 
 function makeAjaxCall(url) {
-  // request and return promise
-}
+  // ვაკეთებთ მოთხოვნას და ვაბრუნებთ პრომისს
 
 function makeHttpCall(url) {
-  // request and return promise
+  // ვაკეთებთ მოთხოვნას და ვაბრუნებთ პრომისს
 }
 ```
 
@@ -1362,7 +1357,7 @@ class AjaxAdapter extends Adapter {
   }
 
   request(url) {
-    // request and return promise
+    // ვაკეთებთ მოთხოვნას და ვაბრუნებთ პრომისს
   }
 }
 
@@ -1373,7 +1368,7 @@ class NodeAdapter extends Adapter {
   }
 
   request(url) {
-    // request and return promise
+    // ვაკეთებთ მოთხოვნას და ვაბრუნებთ პრომისს
   }
 }
 
@@ -1384,7 +1379,7 @@ class HttpRequester {
 
   fetch(url) {
     return this.adapter.request(url).then(response => {
-      // transform response and return
+      // ტრანსფორმირებას უკეთებს პასუხს და აბრუნებს
     });
   }
 }
@@ -1445,7 +1440,7 @@ function renderLargeRectangles(rectangles) {
   rectangles.forEach(rectangle => {
     rectangle.setWidth(4);
     rectangle.setHeight(5);
-    const area = rectangle.getArea(); // ცუდია: ვადრატისთვის აბრუნებს 25. უნდა იყოს 20.
+    const area = rectangle.getArea(); // ცუდია: კვადრატისთვის აბრუნებს 25. უნდა იყოს 20.
     rectangle.render(area);
   });
 }
@@ -1848,13 +1843,13 @@ try {
 try {
   functionThatMightThrow();
 } catch (error) {
-  // One option (more noisy than console.log):
+  // ერთ–ერთი ვარიანტი (console.log–თან შედარებით უფრო ხმაურიანია)
   console.error(error);
-  // Another option:
+  // სხვა ვარიანტი:
   notifyUserOfError(error);
-  // Another option:
+  // სხვა ვარიანტი:
   reportErrorToService(error);
-  // OR do all three!
+  // ან სამივე ერთად გამოიყენეთ!
 }
 ```
 
@@ -2031,19 +2026,6 @@ review.perfReview();
 
 **ცუდია:**
 
-  // Длина строки
-  const length = data.length;
-
-  // Цикл через каждый символ в данных
-  for (let i = 0; i < length; i++) {
-    // Получаем код символа
-    const char = data.charCodeAt(i);
-    // Создаем хэш
-    hash = ((hash << 5) - hash) + char;
-    // Преобразуем в 32-битное целое число
-
-
-
 ```javascript
 function hashIt(data) {
   // ჰეში
@@ -2112,7 +2094,7 @@ doStuff();
 
 ```javascript
 /**
- * 2016-12-20: ცაშლილია მონადები, ვერ გავიგე რა იყო ის (RM)
+ * 2016-12-20: წაშლილია მონადები, ვერ გავიგე რა იყო ის (RM)
  * 2016-10-01: სპეციალური მონადების წარმატებული გამოყენება (JP)
  * 2016-02-03: ტიპების შემოწმება გაუქმებულია (LI)
  * 2015-03-14: დამატებულია combine ტიპის შემოწმებით (JR)
